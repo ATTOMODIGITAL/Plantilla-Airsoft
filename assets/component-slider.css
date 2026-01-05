@@ -317,6 +317,7 @@ slider-component.slider-component-full-width {
   align-items: center;
   justify-content: space-between;
   position:absolute;
+  padding:0px 2%;
   top:50%;
   width:100%;
 }
