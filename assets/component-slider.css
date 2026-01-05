@@ -354,6 +354,8 @@ slider-component.slider-component-full-width {
   justify-content: center;
   transition: all 0.3s ease;
 }
+.slider-button .svg-wrapper svg,
+.slider-button .svg-wrapper svg path{  fill:var(--color-button);}
 
 .slider-button:not([disabled]):hover {
   color: rgb(var(--color-foreground));
