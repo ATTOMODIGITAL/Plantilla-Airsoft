@@ -51,6 +51,9 @@
       {%- if product.price_varies == false and product.compare_at_price_varies %} price--no-compare{% endif -%}
       {%- if show_badges %} price--show-badge{% endif -%}
     "
+    {%- if settings.price_color -%}
+      style="color:{{ settings.price_color }}"
+    {%- endif -%}
   >
     <div class="price__container">
       {%- comment -%}
@@ -66,9 +69,6 @@
             {%- unless product.price_varies == false and product.compare_at_price_varies %}
               <span
                 class="visually-hidden visually-hidden--inline"
-                {%- if settings.price_color -%}
-                  style="color:{{ settings.price_color }}"
-                {%- endif -%}
               >
                 {{- 'products.product.price.regular_price' | t -}}
               </span>
@@ -92,12 +92,7 @@
           </span>
         {%- else -%}
           <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-          <span
-            class="price-item price-item--regular"
-            {%- if settings.price_color -%}
-              style="color:{{ settings.price_color }}"
-            {%- endif -%}
-          >
+          <span class="price-item price-item--regular">
             {{ money_price }}
           </span>
         {%- endif -%}
