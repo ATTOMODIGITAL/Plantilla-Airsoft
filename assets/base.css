@@ -3595,3 +3595,6 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+.border-15{border-radius:30px;}
+.border-30{border-radius:30px;}
