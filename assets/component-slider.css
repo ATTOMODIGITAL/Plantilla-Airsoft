@@ -341,8 +341,7 @@ slider-component.slider-component-full-width {
 }
 
 .slider-button {
-  /* color: rgba(var(--color-foreground), 0.75); */
-  color:rgb(var(--color-button));
+  color: rgba(var(--color-foreground), 0.75);
   background:rgba(41, 41, 41,0.4);
   border:none;
   border-radius: 50px;
@@ -354,7 +353,8 @@ slider-component.slider-component-full-width {
   justify-content: center;
   transition: all 0.3s ease;
 }
-
+.slider-button .svg-wrapper svg,
+.slider-button .svg-wrapper svg path{  fill:rgb(var(--color-button));}
 
 .slider-button:not([disabled]):hover {
   color: rgb(var(--color-foreground));
