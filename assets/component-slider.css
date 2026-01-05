@@ -242,10 +242,10 @@ slider-component.slider-component-full-width {
 }
 
 .slider-counter {
-/*   display: flex;
+  display: flex;
   justify-content: center;
-  min-width: 4.4rem; */
-  display:none :
+  min-width: 4.4rem;
+  display:none;
 }
 
 @media screen and (min-width: 750px) {
