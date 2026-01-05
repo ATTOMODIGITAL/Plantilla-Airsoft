@@ -22,6 +22,7 @@
   --text-alignment: var(--product-card-text-alignment);
 }
 .card-wrapper{--border-radius: var(--product-card-corner-radius); background-color:red;}
+
 .collection-card-wrapper .card,
 .contains-card--collection {
   --border-radius: var(--collection-card-corner-radius);
