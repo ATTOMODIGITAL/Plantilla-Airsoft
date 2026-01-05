@@ -549,7 +549,6 @@
         "type": "color",
         "id": "price_color",
         "label": "t:settings_schema.colors.settings.customer.order.price'",
-        "default": "#292929"
       },
       {
         "type": "header",
