@@ -540,6 +540,12 @@
         "default": "scheme-2"
       },
       {
+        "type": "color",
+        "id": "product_bg_color",
+        "label": "t:sections.all.colors.label",
+        "default": "#292929"
+      },
+      {
         "type": "header",
         "content": "t:settings_schema.global.settings.header__border.content"
       },
