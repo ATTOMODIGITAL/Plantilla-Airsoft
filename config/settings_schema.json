@@ -546,6 +546,12 @@
         "default": "#292929"
       },
       {
+        "type": "color",
+        "id": "price_color",
+        "label": "t:settings_schema.colors.settings.background.label",
+        "default": "#292929"
+      },
+      {
         "type": "header",
         "content": "t:settings_schema.global.settings.header__border.content"
       },
