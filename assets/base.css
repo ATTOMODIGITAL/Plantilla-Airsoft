@@ -893,6 +893,9 @@ summary::-webkit-details-marker {
     column-gap: var(--grid-desktop-horizontal-spacing);
     row-gap: var(--grid-desktop-vertical-spacing);
   }
+  .grid {
+    gap: var(--grid-desktop-horizontal-spacing);
+  }
 }
 
 .grid:last-child {
