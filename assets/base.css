@@ -21,6 +21,7 @@
   --image-padding: var(--product-card-image-padding);
   --text-alignment: var(--product-card-text-alignment);
 }
+.card-wrapper{--border-radius: var(--product-card-corner-radius);}
 
 .collection-card-wrapper .card,
 .contains-card--collection {
