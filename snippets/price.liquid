@@ -51,6 +51,9 @@
       {%- if product.price_varies == false and product.compare_at_price_varies %} price--no-compare{% endif -%}
       {%- if show_badges %} price--show-badge{% endif -%}
     "
+    {%- if section.price_color -%}
+      style="color:{{ section.price_color }}"
+    {%- endif -%}
   >
     <div class="price__container">
       {%- comment -%}
@@ -109,7 +112,10 @@
         </span>
       </div>
       {%- if product.selected_or_first_available_variant.unit_price_measurement -%}
-        {% render 'unit-price', price: product.selected_or_first_available_variant.unit_price, measurement: product.selected_or_first_available_variant.unit_price_measurement %}
+        {% render 'unit-price',
+          price: product.selected_or_first_available_variant.unit_price,
+          measurement: product.selected_or_first_available_variant.unit_price_measurement
+        %}
       {%- endif -%}
     </div>
     {%- if show_badges -%}
