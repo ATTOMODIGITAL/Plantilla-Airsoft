@@ -630,7 +630,7 @@
       }
     ]
   },
-  {
+  /* {
     "name": "t:settings_schema.collection_cards.name",
     "settings": [
       {
@@ -764,7 +764,7 @@
         "default": 0
       }
     ]
-  },
+  }, */
   {
     "name": "t:settings_schema.blog_cards.name",
     "settings": [
