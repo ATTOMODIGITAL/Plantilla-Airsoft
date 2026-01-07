@@ -138,7 +138,7 @@
 
 .card__information {
   grid-row-start: 2;
-  padding: 1rem;
+  padding: 1rem 1rem;
 }
 
 .card:not(.ratio) > .card__content {
@@ -264,6 +264,8 @@
     margin-top: 4.2rem;
   }
 }
+
+
 
 .card__badge {
   align-self: flex-end;
