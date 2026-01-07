@@ -590,3 +590,5 @@
     clip-path: polygon(var(--shape--blob-5));
   }
 }
+
+.card--collection .card_button_wrapper{position:absolute; top:50%;}
