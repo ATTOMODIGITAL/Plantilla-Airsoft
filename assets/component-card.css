@@ -539,6 +539,3 @@
 .card--collection .card_button_wrapper{position:absolute; bottom:10%;}
 
 
-@media screen and (min-width: 750px) {
-  .card--collection{max-height:320px;max-width:300px;}
-}
