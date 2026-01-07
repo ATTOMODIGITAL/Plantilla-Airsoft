@@ -590,5 +590,5 @@
     clip-path: polygon(var(--shape--blob-5));
   }
 }
-
+.card--collection{max-height:500px;max-width:300px;}
 .card--collection .card_button_wrapper{position:absolute; top:50%;}
