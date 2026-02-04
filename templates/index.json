@@ -91,7 +91,8 @@
         "featured_collection_eBqx7J": {
           "type": "featured_collection",
           "settings": {
-            "collection": "frontpage"
+            "collection": "frontpage",
+            "image": "shopify://shop_images/wax-special.png"
           }
         },
         "featured_collection_MQgQaA": {
@@ -103,7 +104,8 @@
         "featured_collection_GgkFf8": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "",
+            "image": "shopify://shop_images/theme_cover_image.jpg"
           }
         }
       },
