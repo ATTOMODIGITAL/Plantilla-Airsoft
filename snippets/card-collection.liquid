@@ -111,9 +111,11 @@
             {%- else -%}
               {{ 'onboarding.collection_title' | t }}
             {%- endif -%}
-            <span class="icon-wrap icon-circle">
-              {{ 'icon-arrow.svg' | inline_asset_content }}
-            </span>
+            {% if showicon %}
+              <span class="icon-wrap icon-circle">
+                {{ 'icon-arrow.svg' | inline_asset_content }}
+              </span>
+            {% endif %}
           </a>
         </h3>
       </div>
