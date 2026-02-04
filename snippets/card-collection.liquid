@@ -112,7 +112,10 @@
               {{ 'onboarding.collection_title' | t }}
             {%- endif -%}
             {% if showicon %}
-              <span class="icon-wrap icon-circle">
+              <span
+                class="icon-wrap icon-circle"
+                style="background-color:#292929 ; padding: 10px ; border-radius:50px;"
+              >
                 {{ 'icon-arrow.svg' | inline_asset_content }}
               </span>
             {% endif %}
