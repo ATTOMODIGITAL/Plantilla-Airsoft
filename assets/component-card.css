@@ -300,6 +300,7 @@
 .card__heading {
   margin-top: 0;
   margin-bottom: 0;
+  width:80%;
 }
 
 .card__heading:last-child {
