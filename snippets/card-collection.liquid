@@ -16,11 +16,21 @@
 
 {%- liquid
   assign ratio = 1
-  if card_collection.featured_image and media_aspect_ratio == 'portrait'
-    assign ratio = 0.8
-  elsif card_collection.featured_image and media_aspect_ratio == 'adapt'
-    assign ratio = card_collection.featured_image.aspect_ratio
+
+  assign card_image = null
+
+  if media != blank
+    assign card_image = media
+  elsif card_collection.featured_image != blank
+    assign card_image = card_collection.featured_image
   endif
+
+  if card_image and media_aspect_ratio == 'portrait'
+    assign ratio = 0.8
+  elsif card_image and media_aspect_ratio == 'adapt'
+    assign ratio = card_image.aspect_ratio
+  endif
+
   if ratio == 0 or ratio == null
     assign ratio = 1
   endif
