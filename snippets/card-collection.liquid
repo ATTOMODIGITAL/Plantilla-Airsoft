@@ -1,12 +1,18 @@
 {% comment %}
   Renders a collection card (simplified)
 
-  Priority:
-  1. media (image picker)
-  2. card_collection.featured_image
-  3. placeholder_image
-{% endcomment %}
+  Accepts:
+  - card_collection: {Object} Collection Liquid object
+  - media_aspect_ratio: {String} Values: "square", "portrait", "adapt". Default: "square" (optional)
+  - columns: {Number}
+  - media: custom image
+  - extend_height: {Boolean} Default: false (optional)
+  - wrapper_class: {String} Wrapper class for card (optional)
+  - placeholder_image: {String} Placeholder image when collection is empty (optional)
 
+  Usage:
+  {% render 'card-collection' %}
+{% endcomment %}
 {%- liquid
   assign ratio = 1
   assign card_image = null
