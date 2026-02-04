@@ -96,7 +96,10 @@
         </div>
       {%- endif -%}
 
-      <div class="card_button_wrapper">
+      <div
+        class="card_button_wrapper"
+        style=" display:flex;display: flex; width:100%; align-items: center; justify-content: center;"
+      >
         <h3 class="card__heading">
           <a
             {% if card_collection == blank %}
@@ -114,7 +117,7 @@
             {% if showicon %}
               <span
                 class="icon-wrap icon-circle"
-                style="background-color:#292929 ; padding: 10px ; border-radius:50px; color:white;"
+                style="background-color:#292929 ; padding: 10px 15px; border-radius:50px; color:white;"
               >
                 {{ 'icon-arrow.svg' | inline_asset_content }}
               </span>
