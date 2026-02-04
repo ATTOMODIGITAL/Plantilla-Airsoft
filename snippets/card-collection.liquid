@@ -1,22 +1,14 @@
 {% comment %}
   Renders a collection card (simplified)
 
-  Accepts:
-  - card_collection: {Object} Collection Liquid object
-  - media_aspect_ratio: {String} Values: "square", "portrait", "adapt". Default: "square" (optional)
-  - columns: {Number}
-  - media: custom image
-  - extend_height: {Boolean} Default: false (optional)
-  - wrapper_class: {String} Wrapper class for card (optional)
-  - placeholder_image: {String} Placeholder image when collection is empty (optional)
-
-  Usage:
-  {% render 'card-collection' %}
+  Priority:
+  1. media (image picker)
+  2. card_collection.featured_image
+  3. placeholder_image
 {% endcomment %}
 
 {%- liquid
   assign ratio = 1
-
   assign card_image = null
 
   if media != blank
@@ -49,15 +41,19 @@
       card
       card--collection
       card--{{ card_style }}
-      {% if card_collection.featured_image %} card--media{% else %} card--text{% endif %}
+      {% if card_image %} card--media{% else %} card--text{% endif %}
       {% if card_style == 'card' %} color-{{ card_color_scheme }} gradient{% endif %}
       {% if extend_height %} card--extend-height{% endif %}
-      {% if card_collection.featured_image == nil and card_style == 'card' %} ratio{% endif %}
+      {% if card_image == nil and card_style == 'card' %} ratio{% endif %}
     "
     style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
   >
     <div
-      class="card__inner {% if card_style == 'standard' %}color-{{ card_color_scheme }} gradient{% endif %}{% if card_collection.featured_image or card_style == 'standard' %} ratio{% endif %}"
+      class="
+        card__inner
+        {% if card_style == 'standard' %}color-{{ card_color_scheme }} gradient{% endif %}
+        {% if card_image or card_style == 'standard' %} ratio{% endif %}
+      "
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
     >
       {%- if card_image -%}
@@ -65,39 +61,34 @@
           <div class="media media--transparent media--hover-effect">
             <img
               srcset="
-                {%- if card_collection.featured_image.width >= 165 -%}{{ card_collection.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
-                {%- if card_collection.featured_image.width >= 330 -%}{{ card_collection.featured_image | image_url: width: 330 }} 330w,{%- endif -%}
-                {%- if card_collection.featured_image.width >= 535 -%}{{ card_collection.featured_image | image_url: width: 535 }} 535w,{%- endif -%}
-                {%- if card_collection.featured_image.width >= 750 -%}{{ card_collection.featured_image | image_url: width: 750 }} 750w,{%- endif -%}
-                {%- if card_collection.featured_image.width >= 1000 -%}{{ card_collection.featured_image | image_url: width: 1000 }} 1000w,{%- endif -%}
-                {%- if card_collection.featured_image.width >= 1500 -%}{{ card_collection.featured_image | image_url: width: 1500 }} 1500w,{%- endif -%}
-                {%- if card_collection.featured_image.width >= 3000 -%}{{ card_collection.featured_image | image_url: width: 3000 }} 3000w,{%- endif -%}
-                {{ card_collection.featured_image | image_url }} {{ card_collection.featured_image.width }}w
+                {%- if card_image.width >= 165 -%}{{ card_image | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if card_image.width >= 330 -%}{{ card_image | image_url: width: 330 }} 330w,{%- endif -%}
+                {%- if card_image.width >= 535 -%}{{ card_image | image_url: width: 535 }} 535w,{%- endif -%}
+                {%- if card_image.width >= 750 -%}{{ card_image | image_url: width: 750 }} 750w,{%- endif -%}
+                {%- if card_image.width >= 1000 -%}{{ card_image | image_url: width: 1000 }} 1000w,{%- endif -%}
+                {%- if card_image.width >= 1500 -%}{{ card_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                {{ card_image | image_url }} {{ card_image.width }}w
               "
-              src="{{ card_collection.featured_image | image_url: width: 1500 }}"
+              src="{{ card_image | image_url: width: 1500 }}"
               sizes="
                 (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: columns }}px,
                 (min-width: 750px) {% if columns > 1 %}calc((100vw - 10rem) / 2){% else %}calc(100vw - 10rem){% endif %},
                 calc(100vw - 3rem)
               "
-              alt="{{ card_collection.featured_image.alt | escape }}"
-              height="{{ card_collection.featured_image.height }}"
-              width="{{ card_collection.featured_image.width }}"
+              alt="{{ card_image.alt | escape }}"
+              height="{{ card_image.height }}"
+              width="{{ card_image.width }}"
               loading="lazy"
               class="motion-reduce"
             >
           </div>
         </div>
-      {%- endif -%}
-
-      {%- if card_collection == blank -%}
+      {%- else -%}
         <div class="card__media">
           {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
         </div>
       {%- endif -%}
-      {%- comment -%}
-        SINGLE title block (no duplicates)
-      {%- endcomment -%}
+
       <div class="card_button_wrapper">
         <h3 class="card__heading">
           <a
@@ -109,12 +100,12 @@
             class="full-unstyled-link"
           >
             {%- if card_collection.title != blank -%}
-              {{- card_collection.title | escape -}}
+              {{ card_collection.title | escape }}
             {%- else -%}
               {{ 'onboarding.collection_title' | t }}
             {%- endif -%}
             <span class="icon-wrap">
-              {{- 'icon-arrow.svg' | inline_asset_content -}}
+              {{ 'icon-arrow.svg' | inline_asset_content }}
             </span>
           </a>
         </h3>
