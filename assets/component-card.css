@@ -582,4 +582,4 @@
   }
 }
 .card--collection{max-height:500px;max-width:300px;}
-.card--collection .card_button_wrapper{position:absolute; bottom:10%;}
+.card--collection .card_button_wrapper{position:absolute; bottom:5%; display:flex;display: flex; width:100%; align-items: center; justify-content: center;}
