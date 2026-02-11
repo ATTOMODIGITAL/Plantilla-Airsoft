@@ -1164,32 +1164,8 @@
       }
     },
     "scrolling-banner": {
-      "name": "Image banner",
+      "name": "Scrolling banner",
       "settings": {
-        "image": {
-          "label": "Image 1"
-        },
-        "image_2": {
-          "label": "Image 2"
-        },
-        "image_overlay_opacity": {
-          "label": "Overlay opacity"
-        },
-        "image_height": {
-          "label": "Height",
-          "options__1": {
-            "label": "Adapt to first image"
-          },
-          "options__2": {
-            "label": "Small"
-          },
-          "options__3": {
-            "label": "Medium"
-          },
-          "options__4": {
-            "label": "Large"
-          }
-        },
         "content": {
           "content": "Content"
         },
