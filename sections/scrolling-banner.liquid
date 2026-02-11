@@ -1,5 +1,6 @@
 {{ 'section-scrolling-banner.min.css' | asset_url | stylesheet_tag }}
 <style>
+    scrolling-banner{margin:20px 0;}
     .logo-item {
     text-align: center;
     padding: 10px;
@@ -33,7 +34,7 @@
     class="color-scheme--{{ section.settings.color_scheme }} wrapper-spacing--v{% if section.settings.show_fade %} show-fade{% endif %}"
     data-wetheme-section-type="scrolling-banner"
     data-wetheme-section-id="{{ section.id }}"
-    style="      background-color: {{ section.settings.background_color }};"
+    style="background-color: {{ section.settings.background_color }};"
   >
     <scrolling-banner
       class="animation-direction-{{ section.settings.animation_direction }}"
