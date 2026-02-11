@@ -284,6 +284,9 @@
         "other": "{{ count }} артикула"
       }
     },
+    "scrolling-banner": {
+      "name": "Превъртащ се банер"
+    },
     "cart": {
       "title": "Вашата количка",
       "caption": "Артикули в количката",
@@ -318,9 +321,6 @@
     },
     "footer": {
       "payment": "Начини на плащане"
-    },
-    "scrolling-banner": {
-      "name": "Превъртащ се банер"
     },
     "featured_blog": {
       "view_all": "Покажи всички",

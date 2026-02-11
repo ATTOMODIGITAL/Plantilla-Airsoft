@@ -229,9 +229,6 @@
       "filter_and_operator_subtitle": "Seleccionar todos"
     }
   },
-  "scrolling-banner": {
-    "name": "Banner deslizante"
-  },
   "templates": {
     "search": {
       "no_results": "No se encontraron resultados para “{{ terms }}” Revisa la ortografía o usa una palabra o frase diferente.",
