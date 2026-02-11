@@ -1498,6 +1498,9 @@
           },
           "label": "Height"
         },
+        "mobile_height": {
+          "label": "Height"
+        },
         "desktop_image_width": {
           "options__1": {
             "label": "Small"
