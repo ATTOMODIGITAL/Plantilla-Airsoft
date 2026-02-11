@@ -285,7 +285,7 @@
     },
     "scrolling_banner": {
       "name": "Scrolling banner",
-      "sections": {
+      "settings": {
         "icon": "Icon"
       }
     },
