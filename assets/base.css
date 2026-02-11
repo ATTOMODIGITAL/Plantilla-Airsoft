@@ -3598,9 +3598,7 @@ details-disclosure > details {
   }
 }
 
-.banner__media.border-30 img {
-  border-radius: 30px;
-}
+
 .border-30{border-radius:30px; overflow:hidden;}
 .border-50{border-radius:50px;}
 .border-top-20{border-top-right-radius:20px;border-top-left-radius:20px;}
