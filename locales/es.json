@@ -229,6 +229,9 @@
       "filter_and_operator_subtitle": "Seleccionar todos"
     }
   },
+  "scrolling-banner": {
+    "name": "Banner deslizante"
+  },
   "templates": {
     "search": {
       "no_results": "No se encontraron resultados para “{{ terms }}” Revisa la ortografía o usa una palabra o frase diferente.",
@@ -328,9 +331,6 @@
     },
     "footer": {
       "payment": "Formas de pago"
-    },
-    "scrolling-banner": {
-      "name": "Banner deslizante"
     },
     "featured_blog": {
       "view_all": "Ver todo",
