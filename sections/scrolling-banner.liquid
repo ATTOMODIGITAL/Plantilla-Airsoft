@@ -34,9 +34,8 @@
     data-wetheme-section-type="scrolling-banner"
     data-wetheme-section-id="{{ section.id }}"
     style="
-      --padding-section-top: {{ section.settings.section_padding_top }}px;
-      --padding-section-bottom: {{ section.settings.section_padding_bottom }}px;
-        background-color: {{ section.settings.background_color }};
+            --padding-section-bottom: {{ section.settings.section_padding_bottom }}px;
+      background-color: {{ section.settings.background_color }};
     "
   >
     <scrolling-banner
@@ -200,16 +199,7 @@
       "type": "header",
       "content": "t:sections.all.Layout"
     },
-    {
-      "type": "range",
-      "id": "section_padding_top",
-      "label": "t:sections.all.Spacing_top",
-      "min": 0,
-      "max": 150,
-      "step": 5,
-      "unit": "t:sections.all.px",
-      "default": 60
-    },
+
     {
       "type": "range",
       "id": "section_padding_bottom",
