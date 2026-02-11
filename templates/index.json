@@ -146,7 +146,7 @@
       ],
       "name": "t:sections.scrolling-banner.name",
       "settings": {
-        "background_color": "#000000",
+        "background_color": "#e5e5e5",
         "title": "",
         "description": "",
         "show_fade": false,
