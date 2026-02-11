@@ -1,7 +1,3 @@
-.collection-card-wrapper {
-  min-width: 325px;
-}
-
 .collection-card-wrapper .card {
   position: relative;
   border-radius: 30px;
