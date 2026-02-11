@@ -88,6 +88,20 @@
     "collection_list_btq6Uc": {
       "type": "collection-list",
       "blocks": {
+        "featured_collection_VMeAEV": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/Main_b9e0da7f-db89-4d41-83f0-7f417b02831d.jpg"
+          }
+        },
+        "featured_collection_9tyFVP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/sample-normal-wax.png"
+          }
+        },
         "featured_collection_eBqx7J": {
           "type": "featured_collection",
           "settings": {
@@ -109,6 +123,8 @@
         }
       },
       "block_order": [
+        "featured_collection_VMeAEV",
+        "featured_collection_9tyFVP",
         "featured_collection_eBqx7J",
         "featured_collection_MQgQaA",
         "featured_collection_GgkFf8"
@@ -121,6 +137,7 @@
         "columns_desktop": 3,
         "color_scheme": "",
         "show_view_all": false,
+        "show_icon": true,
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 36,
