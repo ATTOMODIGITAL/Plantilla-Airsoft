@@ -1,5 +1,5 @@
 .collection-card-wrapper {
-  max-width: 325px;
+  min-width: 325px;
 }
 
 .collection-card-wrapper .card {
