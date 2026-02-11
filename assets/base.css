@@ -3598,10 +3598,8 @@ details-disclosure > details {
   }
 }
 
-.banner__media.border-30 {
+.banner__media.border-30 img {
   border-radius: 30px;
-  overflow: hidden;
-  position: relative;
 }
 .border-30{border-radius:30px; overflow:hidden;}
 .border-50{border-radius:50px;}
