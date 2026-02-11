@@ -329,6 +329,9 @@
     "footer": {
       "payment": "Formas de pago"
     },
+    "scrolling-banner": {
+      "name": "Banner deslizante"
+    },
     "featured_blog": {
       "view_all": "Ver todo",
       "onboarding_title": "Artículo de blog",
