@@ -3240,8 +3240,11 @@ details-disclosure > details {
 .animate--fixed {
   clip-path: inset(0);
 }
-
-.animate--fixed > img:not(.zoom):not(.deferred-media__poster-button),
+.animate--fixed > img {
+  position: absolute;
+  height: 100vh;
+  top: -10%;
+}
 .animate--fixed > svg:not(.zoom):not(.deferred-media__poster-button) {
   position: fixed;
   height: 100vh;
