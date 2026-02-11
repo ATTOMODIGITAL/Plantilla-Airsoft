@@ -1,1 +1,3 @@
 .collection-card-wrapper {min-width:325px !important; border-radius:20px !important;}
+
+.card--collection .card_button_wrapper{position:absolute; bottom:5%;}
