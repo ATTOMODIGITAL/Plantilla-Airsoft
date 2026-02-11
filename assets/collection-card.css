@@ -18,9 +18,14 @@
 .collection-card-wrapper img {
   border-radius: 30px;
 }
-.collection-card-wrapper .card__heading{
-    width:90%; background:white; display: flex; align-items: center;justify-content:space-between;padding:10px 15px; border-radius:50px;
+.collection-card-wrapper .card__heading a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
 }
+
 .collection-card-wrapper .card_button_wrapper {
   position: absolute;
   bottom: 20px;
