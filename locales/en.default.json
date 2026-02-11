@@ -59,9 +59,6 @@
       "share_url": "Link",
       "success_message": "Link copied to clipboard"
     },
-    "scrolling-banner": {
-      "name": "Scrolling banner"
-    },
     "slider": {
       "of": "of",
       "next_slide": "Slide right",
@@ -285,6 +282,9 @@
       "carousel": "Carousel",
       "announcement": "Announcement",
       "announcement_bar": "Announcement bar"
+    },
+    "scrolling-banner": {
+      "name": "Scrolling banner"
     },
     "header": {
       "announcement": "Announcement",
