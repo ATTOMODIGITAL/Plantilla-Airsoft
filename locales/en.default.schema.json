@@ -9,137 +9,6 @@
  */
 {
   "settings_schema": {
-    "all": {
-      "direction": "Direction",
-      "Left": "Left",
-      "Right": "Right",
-      "speed": "Speed",
-      "Layout": "Layout",
-      "Spacing_top": "Spacing top",
-      "Spacing_bottom": "Spacing bottom",
-      "space_between_blocks_desktop": "Space between blocks (desktop)",
-      "space_between_blocks_mobile": "Space between blocks (mobile)",
-      "rotate": "Rotate",
-      "Color": "Color",
-      "Color_scheme": "Color scheme",
-      "Minimal": "Minimal",
-      "Light": "Light",
-      "Feature": "Feature",
-      "Dark": "Dark",
-      "Font": "Font",
-      "Heading": "Heading",
-      "Body": "Body",
-      "Style": "Style",
-      "fill": "Fill",
-      "outline": "Outline",
-      "font_size_desktop": "Font size (desktop)",
-      "font_size_mobile": "Font size (mobile)",
-      "Icon": "Icon",
-      "height_desktop": "Height (desktop)",
-      "height_mobile": "Height (mobile)",
-      "Home_with_smile": "Home with smile",
-      "Store": "Store",
-      "Flag": "Flag",
-      "Customer_service": "Customer service",
-      "Chat_bubble": "Chat bubble",
-      "Chat_bubble_with_smile": "Chat bubble with smile",
-      "Question_and_answer": "Question and answer",
-      "Wallet": "Wallet",
-      "Price_tag": "Price tag",
-      "Crown": "Crown",
-      "Exchange": "Exchange",
-      "Gift": "Gift",
-      "Clock": "Clock",
-      "Truck": "Truck",
-      "Measuring_tape": "Measuring tape",
-      "Info": "Info",
-      "Heart": "Heart",
-      "Map_pin": "Map pin",
-      "Car": "Car",
-      "Takeaway": "Takeaway",
-      "Restaurant": "Restaurant",
-      "Cup": "Cup",
-      "Star": "Star",
-      "Sun": "Sun",
-      "Moon": "Moon",
-      "Cake": "Cake",
-      "Handbag": "Handbag",
-      "Umbrella": "Umbrella",
-      "Recycle": "Recycle",
-      "animation": {
-        "content": "Animations",
-        "image_behavior": {
-          "options__1": {
-            "label": "None"
-          },
-          "options__2": {
-            "label": "Ambient movement"
-          },
-          "options__3": {
-            "label": "Fixed background position"
-          },
-          "options__4": {
-            "label": "Zoom in on scroll"
-          },
-          "label": "Animation"
-        }
-      },
-      "padding": {
-        "section_padding_heading": "Padding",
-        "padding_top": "Top",
-        "padding_bottom": "Bottom"
-      },
-      "spacing": "Spacing",
-      "colors": {
-        "label": "Color scheme",
-        "has_cards_info": "To change the card color scheme, update your theme settings."
-      },
-      "heading_size": {
-        "label": "Heading size",
-        "options__1": {
-          "label": "Small"
-        },
-        "options__2": {
-          "label": "Medium"
-        },
-        "options__3": {
-          "label": "Large"
-        },
-        "options__4": {
-          "label": "Extra large"
-        },
-        "options__5": {
-          "label": "Extra extra large"
-        }
-      },
-      "image_shape": {
-        "options__1": {
-          "label": "Default"
-        },
-        "options__2": {
-          "label": "Arch"
-        },
-        "options__3": {
-          "label": "Blob"
-        },
-        "options__4": {
-          "label": "Chevron left"
-        },
-        "options__5": {
-          "label": "Chevron right"
-        },
-        "options__6": {
-          "label": "Diamond"
-        },
-        "options__7": {
-          "label": "Parallelogram"
-        },
-        "options__8": {
-          "label": "Round"
-        },
-        "label": "Image shape"
-      }
-    },
     "global": {
       "settings": {
         "header__border": {
@@ -504,6 +373,137 @@
     }
   },
   "sections": {
+    "all": {
+      "direction": "Direction",
+      "Left": "Left",
+      "Right": "Right",
+      "speed": "Speed",
+      "Layout": "Layout",
+      "Spacing_top": "Spacing top",
+      "Spacing_bottom": "Spacing bottom",
+      "space_between_blocks_desktop": "Space between blocks (desktop)",
+      "space_between_blocks_mobile": "Space between blocks (mobile)",
+      "rotate": "Rotate",
+      "Color": "Color",
+      "Color_scheme": "Color scheme",
+      "Minimal": "Minimal",
+      "Light": "Light",
+      "Feature": "Feature",
+      "Dark": "Dark",
+      "Font": "Font",
+      "Heading": "Heading",
+      "Body": "Body",
+      "Style": "Style",
+      "fill": "Fill",
+      "outline": "Outline",
+      "font_size_desktop": "Font size (desktop)",
+      "font_size_mobile": "Font size (mobile)",
+      "Icon": "Icon",
+      "height_desktop": "Height (desktop)",
+      "height_mobile": "Height (mobile)",
+      "Home_with_smile": "Home with smile",
+      "Store": "Store",
+      "Flag": "Flag",
+      "Customer_service": "Customer service",
+      "Chat_bubble": "Chat bubble",
+      "Chat_bubble_with_smile": "Chat bubble with smile",
+      "Question_and_answer": "Question and answer",
+      "Wallet": "Wallet",
+      "Price_tag": "Price tag",
+      "Crown": "Crown",
+      "Exchange": "Exchange",
+      "Gift": "Gift",
+      "Clock": "Clock",
+      "Truck": "Truck",
+      "Measuring_tape": "Measuring tape",
+      "Info": "Info",
+      "Heart": "Heart",
+      "Map_pin": "Map pin",
+      "Car": "Car",
+      "Takeaway": "Takeaway",
+      "Restaurant": "Restaurant",
+      "Cup": "Cup",
+      "Star": "Star",
+      "Sun": "Sun",
+      "Moon": "Moon",
+      "Cake": "Cake",
+      "Handbag": "Handbag",
+      "Umbrella": "Umbrella",
+      "Recycle": "Recycle",
+      "animation": {
+        "content": "Animations",
+        "image_behavior": {
+          "options__1": {
+            "label": "None"
+          },
+          "options__2": {
+            "label": "Ambient movement"
+          },
+          "options__3": {
+            "label": "Fixed background position"
+          },
+          "options__4": {
+            "label": "Zoom in on scroll"
+          },
+          "label": "Animation"
+        }
+      },
+      "padding": {
+        "section_padding_heading": "Padding",
+        "padding_top": "Top",
+        "padding_bottom": "Bottom"
+      },
+      "spacing": "Spacing",
+      "colors": {
+        "label": "Color scheme",
+        "has_cards_info": "To change the card color scheme, update your theme settings."
+      },
+      "heading_size": {
+        "label": "Heading size",
+        "options__1": {
+          "label": "Small"
+        },
+        "options__2": {
+          "label": "Medium"
+        },
+        "options__3": {
+          "label": "Large"
+        },
+        "options__4": {
+          "label": "Extra large"
+        },
+        "options__5": {
+          "label": "Extra extra large"
+        }
+      },
+      "image_shape": {
+        "options__1": {
+          "label": "Default"
+        },
+        "options__2": {
+          "label": "Arch"
+        },
+        "options__3": {
+          "label": "Blob"
+        },
+        "options__4": {
+          "label": "Chevron left"
+        },
+        "options__5": {
+          "label": "Chevron right"
+        },
+        "options__6": {
+          "label": "Diamond"
+        },
+        "options__7": {
+          "label": "Parallelogram"
+        },
+        "options__8": {
+          "label": "Round"
+        },
+        "label": "Image shape"
+      }
+    },
     "announcement-bar": {
       "name": "Announcement bar",
       "settings": {
