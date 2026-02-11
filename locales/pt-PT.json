@@ -294,9 +294,6 @@
         "many": "{{ count }} itens"
       }
     },
-    "scrolling-banner": {
-      "name": "Banner deslizante"
-    },
     "cart": {
       "title": "O seu carrinho",
       "caption": "Itens do carrinho",
