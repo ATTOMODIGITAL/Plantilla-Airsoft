@@ -1,3 +1,33 @@
-.collection-card-wrapper {min-width:325px !important; border-radius:20px !important;}
+.collection-card-wrapper {
+  min-width: 325px;
+}
 
-.card--collection .card_button_wrapper{position:absolute; bottom:5%;}
+.collection-card-wrapper .card {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+
+.collection-card-wrapper .card__inner {
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.collection-card-wrapper .media,
+.collection-card-wrapper img {
+  border-radius: 30px;
+}
+.collection-card-wrapper .card__heading{
+    width:90%; background:white; display: flex; align-items: center;justify-content:space-between;padding:10px 15px; border-radius:50px;
+}
+.collection-card-wrapper .card_button_wrapper {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+  z-index: 5;
+}
