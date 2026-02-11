@@ -506,6 +506,9 @@
         "name": "Announcement bar"
       }
     },
+    "scrolling-banner": {
+      "name": "Scrolling banner"
+    },
     "apps": {
       "name": "Apps",
       "settings": {
