@@ -294,6 +294,9 @@
         "many": "{{ count }} itens"
       }
     },
+    "scrolling-banner": {
+      "name": "Banner deslizante"
+    },
     "cart": {
       "title": "O seu carrinho",
       "caption": "Itens do carrinho",
@@ -328,9 +331,6 @@
     },
     "footer": {
       "payment": "Métodos de pagamento"
-    },
-    "scrolling-banner": {
-      "name": "Banner deslizante"
     },
     "featured_blog": {
       "view_all": "Ver tudo",
