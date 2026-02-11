@@ -39,9 +39,6 @@
         background-color: {{ section.settings.background_color }};
     "
   >
-    {% comment %} Section title and description {% endcomment %}
-    {% render 'dynamic-section-header' with section_title: section.settings.title, section_description: section.settings.description %}
-
     <scrolling-banner
       class="animation-direction-{{ section.settings.animation_direction }}"
       style="
