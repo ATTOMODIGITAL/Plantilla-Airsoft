@@ -120,6 +120,36 @@
     "scrolling_banner_VLiEHT": {
       "type": "scrolling-banner",
       "blocks": {
+        "image_7ceXJX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image_10.png",
+            "text_label": "",
+            "height_desktop": 60,
+            "height_mobile": 60,
+            "link": ""
+          }
+        },
+        "image_7FR4ai": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image_9.png",
+            "text_label": "",
+            "height_desktop": 60,
+            "height_mobile": 60,
+            "link": ""
+          }
+        },
+        "image_KCLeci": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Airsoft.png",
+            "text_label": "",
+            "height_desktop": 60,
+            "height_mobile": 60,
+            "link": ""
+          }
+        },
         "image_WiEqqp": {
           "type": "image",
           "settings": {
@@ -132,6 +162,9 @@
         }
       },
       "block_order": [
+        "image_7ceXJX",
+        "image_7FR4ai",
+        "image_KCLeci",
         "image_WiEqqp"
       ],
       "name": "t:sections.scrolling-banner.name",
