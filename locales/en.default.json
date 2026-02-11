@@ -286,7 +286,9 @@
     "scrolling_banner": {
       "name": "Scrolling banner",
       "settings": {
-        "icon": "Icon"
+        "icon": {
+          "label": "Icon"
+        }
       }
     },
     "header": {
