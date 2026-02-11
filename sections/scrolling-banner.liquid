@@ -33,10 +33,7 @@
     class="color-scheme--{{ section.settings.color_scheme }} wrapper-spacing--v{% if section.settings.show_fade %} show-fade{% endif %}"
     data-wetheme-section-type="scrolling-banner"
     data-wetheme-section-id="{{ section.id }}"
-    style="
-            --padding-section-bottom: {{ section.settings.section_padding_bottom }}px;
-      background-color: {{ section.settings.background_color }};
-    "
+    style="      background-color: {{ section.settings.background_color }};"
   >
     <scrolling-banner
       class="animation-direction-{{ section.settings.animation_direction }}"
@@ -198,17 +195,6 @@
     {
       "type": "header",
       "content": "t:sections.all.Layout"
-    },
-
-    {
-      "type": "range",
-      "id": "section_padding_bottom",
-      "label": "t:sections.all.Spacing_bottom",
-      "min": 0,
-      "max": 150,
-      "step": 5,
-      "unit": "t:sections.all.px",
-      "default": 60
     },
     {
       "type": "range",
