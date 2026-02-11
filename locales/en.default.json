@@ -284,7 +284,10 @@
       "announcement_bar": "Announcement bar"
     },
     "scrolling_banner": {
-      "name": "Scrolling banner"
+      "name": "Scrolling banner",
+      "sections": {
+        "icon": "Icon"
+      }
     },
     "header": {
       "announcement": "Announcement",
