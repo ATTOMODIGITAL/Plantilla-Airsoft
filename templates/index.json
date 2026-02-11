@@ -120,19 +120,10 @@
     "scrolling_banner_VLiEHT": {
       "type": "scrolling-banner",
       "blocks": {
-        "text_WgTNVi": {
-          "type": "text",
-          "settings": {
-            "text": "Welcome to our store",
-            "font": "heading",
-            "style": "fill",
-            "font_size_desktop": 48,
-            "font_size_mobile": 28
-          }
-        },
-        "image_834wLd": {
+        "image_WiEqqp": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Group_9.png",
             "text_label": "",
             "height_desktop": 60,
             "height_mobile": 60,
@@ -141,8 +132,7 @@
         }
       },
       "block_order": [
-        "text_WgTNVi",
-        "image_834wLd"
+        "image_WiEqqp"
       ],
       "name": "t:sections.scrolling-banner.name",
       "settings": {
