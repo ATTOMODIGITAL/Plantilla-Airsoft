@@ -25,9 +25,8 @@
   gap: 1.5rem;
 }
 
-.card--horizontal.ratio:before {
-  padding-bottom: 0;
-}
+
+
 
 .card--card.card--horizontal {
   padding: 1.2rem;
