@@ -216,6 +216,7 @@
         "benefit_9NKm8z": {
           "type": "benefit",
           "settings": {
+            "icon": "shopify://shop_images/image_9.png",
             "title": "Envío rápido",
             "text": "24/48h"
           }
