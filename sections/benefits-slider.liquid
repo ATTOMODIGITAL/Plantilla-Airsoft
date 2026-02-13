@@ -1,5 +1,5 @@
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
-
+{{ 'benefits-slider.css' | asset_url | stylesheet_tag }}
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -92,48 +92,29 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
-  <div class="page-width">
-    {%- if section.settings.title != blank -%}
-      <div class="title-wrapper-with-link title-wrapper--no-top-margin">
-        <h2 class="{{ section.settings.heading_size }} scroll-trigger animate--slide-in">
-          {{ section.settings.title }}
-        </h2>
-      </div>
-    {%- endif -%}
-
-    <div class="slider-mobile-gutter">
-      <ul
-        class="benefits-slider {% if section.settings.enable_desktop_grid %}grid--desktop{% endif %}"
-        role="list"
-      >
-        {%- for block in section.blocks -%}
-          <li
-            class="benefits-item scroll-trigger animate--slide-in"
-            {{ block.shopify_attributes }}
-            style="--animation-order: {{ forloop.index }};"
-          >
-            <div class="benefits-card">
-              <div class="benefits-card__icon">
-                {%- if block.settings.icon != blank -%}
-                  <img
-                    src="{{ block.settings.icon | image_url: width: 80 }}"
-                    alt="{{ block.settings.title }}"
-                    loading="lazy"
-                  >
-                {%- else -%}
-                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-                {%- endif -%}
-              </div>
-              <div class="benefits-card__content">
-                <h3>{{ block.settings.title }}</h3>
-                <p>{{ block.settings.text }}</p>
-              </div>
+<div class="page-width">
+  <div class="slider-mobile-gutter">
+    <ul class="benefits-slider {% if section.settings.enable_desktop_grid %}grid--desktop{% endif %}" role="list">
+      {%- for block in section.blocks -%}
+        <li class="benefits-item" {{ block.shopify_attributes }}>
+          <div class="benefits-card">
+            <div class="benefits-card__icon">
+              {%- if block.settings.icon != blank -%}
+                <img
+                  src="{{ block.settings.icon | image_url: width: 80 }}"
+                  alt="{{ block.settings.title }}"
+                  loading="lazy"
+                >
+              {%- endif -%}
             </div>
-          </li>
-        {%- endfor -%}
-      </ul>
-    </div>
+            <div class="benefits-card__content">
+              <h3>{{ block.settings.title }}</h3>
+              <p>{{ block.settings.text }}</p>
+            </div>
+          </div>
+        </li>
+      {%- endfor -%}
+    </ul>
   </div>
 </div>
 
