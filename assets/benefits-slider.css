@@ -1,29 +1,26 @@
-/* Contenedor principal del scroll */
 .benefits-slider {
   display: flex;
   flex-direction:column;
   flex-wrap: nowrap;
   overflow-x: auto;
   scroll-snap-type: x proximity;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none; 
   gap: 1.5rem;
-  padding: 0; /* Adiós al espacio extra */
+  padding: 0;
   margin: 0;
-  list-style: none; /* AQUÍ: Esto quita los puntitos blancos */
+  list-style: none; 
   -webkit-overflow-scrolling: touch;
 }
 
-/* Ocultar scrollbar en Chrome, Safari y Edge */
 .benefits-slider::-webkit-scrollbar {
   display: none;
 }
 
-/* Items individuales (las tarjetas) */
 .benefits-item {
   flex: 0 0 auto;
-  width: 28rem; /* Ancho para forzar el scroll horizontal */
+  width: 28rem; 
   scroll-snap-align: start;
-  list-style: none; /* Por si acaso */
+  list-style: none; 
 }
 
 /* La tarjeta estética */
