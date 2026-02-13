@@ -1,0 +1,87 @@
+/* Contenedor principal del scroll */
+.benefits-slider {
+  display: flex;
+  flex-direction:column;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none; /* Firefox */
+  gap: 1.5rem;
+  padding: 0; /* Adiós al espacio extra */
+  margin: 0;
+  list-style: none; /* AQUÍ: Esto quita los puntitos blancos */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ocultar scrollbar en Chrome, Safari y Edge */
+.benefits-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Items individuales (las tarjetas) */
+.benefits-item {
+  flex: 0 0 auto;
+  width: 28rem; /* Ancho para forzar el scroll horizontal */
+  scroll-snap-align: start;
+  list-style: none; /* Por si acaso */
+}
+
+/* La tarjeta estética */
+.benefits-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: 0.8rem;
+  background: rgb(var(--color-background));
+  border: 1px solid rgba(var(--color-foreground), 0.08);
+  height: 100%;
+}
+
+.benefits-card__icon {
+  flex: 0 0 40px;
+  height: 40px;
+  background: #7ED957;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefits-card__icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.benefits-card__content {
+  flex: 1;
+}
+
+.benefits-card__content h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.benefits-card__content p {
+  margin: 0.2rem 0 0;
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+/* Responsive: En desktop se convierte en cuadrícula si lo prefieres */
+@media screen and (min-width: 990px) {
+  .benefits-slider.grid--desktop {
+    display: grid;
+    /* Ajusta el número de columnas según el setting de Shopify */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    overflow-x: visible;
+    gap: 2rem;
+  }
+  
+  .benefits-slider.grid--desktop .benefits-item {
+    width: 100%;
+  }
+}
