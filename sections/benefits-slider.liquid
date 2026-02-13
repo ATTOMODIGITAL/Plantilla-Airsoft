@@ -1,7 +1,7 @@
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'benefits-slider.css' | asset_url | stylesheet_tag }}
 
-<div class="page-width">
+<div class="page-width-desktop">
   <div class="slider-mobile-gutter">
     <ul class="benefits-slider {% if section.settings.enable_desktop_grid %}grid--desktop{% endif %}" role="list">
       {%- for block in section.blocks -%}
