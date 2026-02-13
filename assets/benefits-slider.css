@@ -1,6 +1,5 @@
 .benefits-slider {
   display: flex;
-  flex-direction:column;
   flex-wrap: nowrap;
   overflow-x: auto;
   scroll-snap-type: x proximity;
@@ -23,7 +22,6 @@
   list-style: none; 
 }
 
-/* La tarjeta estética */
 .benefits-card {
   display: flex;
   align-items: center;
