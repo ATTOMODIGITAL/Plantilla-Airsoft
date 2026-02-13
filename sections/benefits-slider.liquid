@@ -1,0 +1,241 @@
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  .benefits-card {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    padding: 2rem;
+    border-radius: 1.2rem;
+    background: rgb(var(--color-background));
+  }
+
+  .benefits-card__icon {
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #7ED957;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .benefits-card__icon img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .benefits-card__content h3 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  .benefits-card__content p {
+    margin: 0;
+    font-size: 1.4rem;
+    opacity: 0.8;
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign columns_mobile_int = section.settings.columns_mobile | plus: 0
+  assign show_mobile_slider = false
+
+  if section.settings.swipe_on_mobile and section.blocks.size > columns_mobile_int
+    assign show_mobile_slider = true
+  endif
+-%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width isolate">
+    {% if section.settings.title != blank %}
+      <h2 class="{{ section.settings.heading_size }}">
+        {{ section.settings.title }}
+      </h2>
+    {% endif %}
+
+    <slider-component class="slider-mobile-gutter">
+      <ul
+        id="Slider-{{ section.id }}"
+        class="
+          grid
+          grid--{{ section.settings.columns_desktop }}-col-desktop
+          grid--{{ section.settings.columns_mobile }}-col-tablet-down
+          {% if section.settings.swipe_on_mobile %} slider slider--tablet grid--peek{% endif %}
+          {% if section.settings.enable_desktop_slider %} slider slider--desktop{% endif %}
+        "
+        role="list"
+      >
+        {% for block in section.blocks %}
+          <li
+            class="grid__item{% if show_mobile_slider %} slider__slide{% endif %}"
+            {{ block.shopify_attributes }}
+          >
+            <div class="benefits-card">
+              {% if block.settings.icon != blank %}
+                <div class="benefits-card__icon">
+                  <img
+                    src="{{ block.settings.icon | image_url: width: 100 }}"
+                    alt="{{ block.settings.title | escape }}"
+                    loading="lazy"
+                  >
+                </div>
+              {% endif %}
+
+              <div class="benefits-card__content">
+                {% if block.settings.title != blank %}
+                  <h3>{{ block.settings.title }}</h3>
+                {% endif %}
+                {% if block.settings.text != blank %}
+                  <p>{{ block.settings.text }}</p>
+                {% endif %}
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+
+      {% if show_mobile_slider %}
+        <div class="slider-buttons">
+          <button type="button" class="slider-button slider-button--prev" name="previous">
+            <span class="svg-wrapper">
+              {{ 'icon-caret.svg' | inline_asset_content }}
+            </span>
+          </button>
+
+          <div class="slider-counter caption">
+            <span class="slider-counter--current">1</span>
+            <span> / </span>
+            <span class="slider-counter--total">{{ section.blocks.size }}</span>
+          </div>
+
+          <button type="button" class="slider-button slider-button--next" name="next">
+            <span class="svg-wrapper">
+              {{ 'icon-caret.svg' | inline_asset_content }}
+            </span>
+          </button>
+        </div>
+      {% endif %}
+    </slider-component>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Barra de beneficios",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "¿Por qué elegirnos?"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "H2" },
+        { "value": "h1", "label": "H1" },
+        { "value": "h0", "label": "Grande" }
+      ],
+      "default": "h2",
+      "label": "Tamaño del título"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4,
+      "label": "Columnas en desktop"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "options": [
+        { "value": "1", "label": "1 columna" },
+        { "value": "2", "label": "2 columnas" }
+      ],
+      "default": "1",
+      "label": "Columnas en móvil"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "default": true,
+      "label": "Activar swipe en móvil"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_desktop_slider",
+      "default": false,
+      "label": "Activar slider en desktop"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme-1",
+      "label": "Esquema de color"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 36,
+      "label": "Padding superior"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 36,
+      "label": "Padding inferior"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Beneficio",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icono"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título",
+          "default": "Envío rápido"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto",
+          "default": "24/48h"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Barra de beneficios",
+      "blocks": [{ "type": "benefit" }, { "type": "benefit" }, { "type": "benefit" }, { "type": "benefit" }]
+    }
+  ]
+}
+{% endschema %}
