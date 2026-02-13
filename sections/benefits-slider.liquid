@@ -2,8 +2,15 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
   }
 
   .benefits-card {
@@ -13,6 +20,7 @@
     padding: 2rem;
     border-radius: 1.2rem;
     background: rgb(var(--color-background));
+    height: 100%; /* Asegura que todas tengan la misma altura en el slider */
   }
 
   .benefits-card__icon {
@@ -20,7 +28,7 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: #7ED957;
+    background: #7ED957; /* Color verde de tu código original */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,6 +37,7 @@
   .benefits-card__icon img {
     width: 24px;
     height: 24px;
+    object-fit: contain;
   }
 
   .benefits-card__content h3 {
@@ -47,36 +56,41 @@
 {%- liquid
   assign columns_mobile_int = section.settings.columns_mobile | plus: 0
   assign show_mobile_slider = false
-
   if section.settings.swipe_on_mobile and section.blocks.size > columns_mobile_int
     assign show_mobile_slider = true
   endif
+
+  assign show_desktop_slider = false
+  if section.settings.enable_desktop_slider and section.blocks.size > section.settings.columns_desktop
+    assign show_desktop_slider = true
+  endif
 -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
-  <div class="page-width-desktop isolate">
-    {% if section.settings.title != blank %}
-      <h2 class="{{ section.settings.heading_size }}">
-        {{ section.settings.title }}
-      </h2>
-    {% endif %}
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width isolate section-{{ section.id }}-padding">
+    {%- unless section.settings.title == blank -%}
+      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
+        <h2 class="inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {{ section.settings.title }}
+        </h2>
+      </div>
+    {%- endunless -%}
 
-    <slider-component class="slider-mobile-gutter">
+    <slider-component class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <ul
+        class="grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
         id="Slider-{{ section.id }}"
-        class="
-          grid
-          grid--{{ section.settings.columns_desktop }}-col-desktop
-          grid--{{ section.settings.columns_mobile }}-col-tablet-down
-          {% if section.settings.swipe_on_mobile %} slider slider--tablet grid--peek{% endif %}
-          {% if section.settings.enable_desktop_slider %} slider slider--desktop{% endif %}
-        "
         role="list"
       >
-        {% for block in section.blocks %}
+        {%- for block in section.blocks -%}
           <li
-            class="grid__item{% if show_mobile_slider %} slider__slide{% endif %}"
+            id="Slide-{{ section.id }}-{{ forloop.index }}"
+            class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {{ block.shopify_attributes }}
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style="--animation-order: {{ forloop.index }};"
+            {% endif %}
           >
             <div class="benefits-card">
               {% if block.settings.icon != blank %}
@@ -85,6 +99,8 @@
                     src="{{ block.settings.icon | image_url: width: 100 }}"
                     alt="{{ block.settings.title | escape }}"
                     loading="lazy"
+                    width="24"
+                    height="24"
                   >
                 </div>
               {% endif %}
@@ -99,33 +115,38 @@
               </div>
             </div>
           </li>
-        {% endfor %}
+        {%- endfor -%}
       </ul>
 
-      {% if show_mobile_slider %}
-        <div class="slider-buttons">
-          <button type="button" class="slider-button slider-button--prev" name="previous">
-            <span class="svg-wrapper">
-              {{ 'icon-caret.svg' | inline_asset_content }}
-            </span>
+      {%- if show_mobile_slider or show_desktop_slider -%}
+        <div class="slider-buttons no-js-hidden">
+          <button
+            type="button"
+            class="slider-button slider-button--prev"
+            name="previous"
+            aria-label="{{ 'general.slider.previous_slide' | t }}"
+          >
+            <span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span>
           </button>
-
           <div class="slider-counter caption">
             <span class="slider-counter--current">1</span>
-            <span> / </span>
+            <span aria-hidden="true"> / </span>
             <span class="slider-counter--total">{{ section.blocks.size }}</span>
           </div>
-
-          <button type="button" class="slider-button slider-button--next" name="next">
-            <span class="svg-wrapper">
-              {{ 'icon-caret.svg' | inline_asset_content }}
-            </span>
+          <button
+            type="button"
+            class="slider-button slider-button--next"
+            name="next"
+            aria-label="{{ 'general.slider.next_slide' | t }}"
+          >
+            <span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span>
           </button>
         </div>
-      {% endif %}
+      {%- endif -%}
     </slider-component>
   </div>
 </div>
+
 {% schema %}
 {
   "name": "Barra de beneficios",
@@ -134,21 +155,31 @@
   "max_blocks": 8,
   "settings": [
     {
-      "type": "text",
+      "type": "inline_richtext",
       "id": "title",
-      "label": "Título",
-      "default": "¿Por qué elegirnos?"
+      "default": "¿Por qué elegirnos?",
+      "label": "Título"
     },
     {
       "type": "select",
       "id": "heading_size",
       "options": [
-        { "value": "h2", "label": "H2" },
-        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "Pequeño" },
+        { "value": "h1", "label": "Mediano" },
         { "value": "h0", "label": "Grande" }
       ],
-      "default": "h2",
+      "default": "h1",
       "label": "Tamaño del título"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme-1",
+      "label": "Esquema de color"
+    },
+    {
+      "type": "header",
+      "content": "Ajustes del Slider"
     },
     {
       "type": "range",
@@ -158,6 +189,12 @@
       "step": 1,
       "default": 4,
       "label": "Columnas en desktop"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_desktop_slider",
+      "label": "Activar slider en desktop",
+      "default": false
     },
     {
       "type": "select",
@@ -173,19 +210,11 @@
       "type": "checkbox",
       "id": "swipe_on_mobile",
       "default": true,
-      "label": "Activar swipe en móvil"
+      "label": "Activar slider en móvil"
     },
     {
-      "type": "checkbox",
-      "id": "enable_desktop_slider",
-      "default": false,
-      "label": "Activar slider en desktop"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "default": "scheme-1",
-      "label": "Esquema de color"
+      "type": "header",
+      "content": "Espaciado"
     },
     {
       "type": "range",
@@ -193,8 +222,9 @@
       "min": 0,
       "max": 100,
       "step": 4,
-      "default": 36,
-      "label": "Padding superior"
+      "unit": "px",
+      "label": "Padding superior",
+      "default": 36
     },
     {
       "type": "range",
@@ -202,8 +232,9 @@
       "min": 0,
       "max": 100,
       "step": 4,
-      "default": 36,
-      "label": "Padding inferior"
+      "unit": "px",
+      "label": "Padding inferior",
+      "default": 36
     }
   ],
   "blocks": [
@@ -217,16 +248,16 @@
           "label": "Icono"
         },
         {
-          "type": "text",
+          "type": "inline_richtext",
           "id": "title",
           "label": "Título",
           "default": "Envío rápido"
         },
         {
-          "type": "text",
+          "type": "inline_richtext",
           "id": "text",
           "label": "Texto",
-          "default": "24/48h"
+          "default": "Recibe tu pedido en 24/48h"
         }
       ]
     }
