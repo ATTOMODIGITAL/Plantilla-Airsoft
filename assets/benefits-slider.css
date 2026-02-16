@@ -55,18 +55,13 @@
   flex: 1;
 }
 
-.benefits-card__content h3 {
+.benefits-card__content h3,.benefits-card__content p  {
   margin: 0;
   font-size: 1.4rem;
   font-weight: 600;
   line-height: 1.2;
 }
 
-.benefits-card__content p {
-  margin: 0.2rem 0 0;
-  font-size: 1.2rem;
-  opacity: 0.7;
-}
 
 /* Responsive: En desktop se convierte en cuadrícula si lo prefieres */
 @media screen and (min-width: 990px) {

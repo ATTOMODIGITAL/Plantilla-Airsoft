@@ -216,22 +216,28 @@
         "benefit_9NKm8z": {
           "type": "benefit",
           "settings": {
+            "background_color": "#7ed957",
+            "icon_color": "#000000",
             "icon": "star-empty",
-            "title": "Envío rápido",
-            "text": "24/48h"
+            "title": "Asesoramiento",
+            "text": "Experto"
           }
         },
         "benefit_gqnpPV": {
           "type": "benefit",
           "settings": {
+            "background_color": "#7ed957",
+            "icon_color": "#000000",
             "icon": "settings",
-            "title": "Envío rápido",
-            "text": "24/48h"
+            "title": "Garantía y",
+            "text": "repuestos"
           }
         },
         "benefit_Xag6Mw": {
           "type": "benefit",
           "settings": {
+            "background_color": "#7ed957",
+            "icon_color": "#000000",
             "icon": "shipping",
             "title": "Envío rápido",
             "text": "24/48h"
@@ -240,9 +246,11 @@
         "benefit_npPyx8": {
           "type": "benefit",
           "settings": {
+            "background_color": "#7ed957",
+            "icon_color": "#000000",
             "icon": "secure",
-            "title": "Envío rápido",
-            "text": "24/48h"
+            "title": "Pago",
+            "text": "Seguro"
           }
         }
       },
