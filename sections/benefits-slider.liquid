@@ -8,7 +8,7 @@
         <li class="benefits-item" {{ block.shopify_attributes }}>
           <div class="benefits-card">
             <div class="benefits-card__icon">
-              {%- render 'icon' with 'star' -%}
+              {%- render 'icon' with 'star-rating' -%}
             </div>
             <div class="benefits-card__content">
               <h3>{{ block.settings.title }}</h3>
@@ -96,6 +96,11 @@
       "type": "benefit",
       "name": "Beneficio",
       "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icono"
+        },
         {
           "type": "inline_richtext",
           "id": "title",
