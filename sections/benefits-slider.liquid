@@ -7,7 +7,7 @@
       {%- for block in section.blocks -%}
         <li class="benefits-item" {{ block.shopify_attributes }}>
           <div class="benefits-card">
-            <div class="benefits-card__icon">
+            <div class="benefits-card__icon" style="background-color: {block.settings.background_color}; color">
               {%- if block.settings.icon != 'none' -%}
                 {%- render 'icon', icon: block.settings.icon -%}
               {%- endif -%}
@@ -102,6 +102,12 @@
         {
           "type": "color",
           "id": "background_color",
+          "label": "Color de fondo",
+          "default": "#7ED957"
+        },
+        {
+          "type": "color",
+          "id": "icon_color",
           "label": "Color de fondo",
           "default": "#7ED957"
         },
