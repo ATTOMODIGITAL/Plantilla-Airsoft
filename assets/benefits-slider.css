@@ -45,12 +45,6 @@
   justify-content: center;
 }
 
-.benefits-card__icon img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-}
-
 .benefits-card__content {
   flex: 1;
 }
