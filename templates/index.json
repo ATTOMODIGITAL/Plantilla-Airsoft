@@ -216,7 +216,7 @@
         "benefit_9NKm8z": {
           "type": "benefit",
           "settings": {
-            "icon": "shopify://shop_images/image_9.png",
+            "icon": "star-empty",
             "title": "Envío rápido",
             "text": "24/48h"
           }
@@ -224,6 +224,7 @@
         "benefit_gqnpPV": {
           "type": "benefit",
           "settings": {
+            "icon": "settings",
             "title": "Envío rápido",
             "text": "24/48h"
           }
@@ -231,6 +232,7 @@
         "benefit_Xag6Mw": {
           "type": "benefit",
           "settings": {
+            "icon": "none",
             "title": "Envío rápido",
             "text": "24/48h"
           }
@@ -238,6 +240,7 @@
         "benefit_npPyx8": {
           "type": "benefit",
           "settings": {
+            "icon": "none",
             "title": "Envío rápido",
             "text": "24/48h"
           }
