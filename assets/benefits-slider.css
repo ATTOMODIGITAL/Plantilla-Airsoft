@@ -57,11 +57,9 @@
 }
 
 
-/* Responsive: En desktop se convierte en cuadrícula si lo prefieres */
 @media screen and (min-width: 990px) {
   .benefits-slider.grid--desktop {
     display: grid;
-    /* Ajusta el número de columnas según el setting de Shopify */
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     overflow-x: visible;
     gap: 2rem;
