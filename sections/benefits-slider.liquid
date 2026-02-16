@@ -3,7 +3,7 @@
 
 <div class="page-width-desktop">
   <div class="slider-mobile-gutter">
-    <ul class="benefits-slider {% if section.settings.enable_desktop_grid %}grid--desktop{% endif %}" role="list">
+    <ul class="benefits-slider " role="list">
       {%- for block in section.blocks -%}
         <li class="benefits-item" {{ block.shopify_attributes }}>
           <div class="benefits-card">
@@ -56,21 +56,6 @@
       "id": "color_scheme",
       "default": "scheme-1",
       "label": "Esquema de color"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_desktop_grid",
-      "label": "En desktop, mostrar cuadrícula fija (no scroll)",
-      "default": true
-    },
-    {
-      "type": "range",
-      "id": "columns_desktop",
-      "min": 2,
-      "max": 5,
-      "step": 1,
-      "default": 4,
-      "label": "Columnas en desktop (si la cuadrícula está activa)"
     },
     {
       "type": "header",
