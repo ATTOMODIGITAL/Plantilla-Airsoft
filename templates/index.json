@@ -232,7 +232,7 @@
         "benefit_Xag6Mw": {
           "type": "benefit",
           "settings": {
-            "icon": "none",
+            "icon": "shipping",
             "title": "Envío rápido",
             "text": "24/48h"
           }
@@ -240,7 +240,7 @@
         "benefit_npPyx8": {
           "type": "benefit",
           "settings": {
-            "icon": "none",
+            "icon": "secure",
             "title": "Envío rápido",
             "text": "24/48h"
           }
