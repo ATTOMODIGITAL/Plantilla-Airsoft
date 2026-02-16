@@ -264,7 +264,7 @@
       "settings": {
         "title": "¿Por qué elegirnos?",
         "heading_size": "h2",
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "enable_desktop_grid": true,
         "columns_desktop": 4,
         "padding_top": 36,
