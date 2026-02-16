@@ -9,7 +9,7 @@
           <div class="benefits-card">
             <div
               class="benefits-card__icon"
-              style="background-color: {block.settings.background_color}; color:{block.settings.icon_color}"
+              style="background-color: {{ block.settings.background_color }}; color: {{ block.settings.icon_color }};"
             >
               {%- if block.settings.icon != 'none' -%}
                 {%- render 'icon', icon: block.settings.icon -%}
