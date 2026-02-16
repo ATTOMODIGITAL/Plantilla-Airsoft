@@ -37,7 +37,9 @@
 .benefits-card__icon {
   width:40px;
   height: 40px;
+  padding:5px;
   background: #7ED957;
+  color:black;
   border-radius: 50%;
   display: flex;
   align-items: center;
