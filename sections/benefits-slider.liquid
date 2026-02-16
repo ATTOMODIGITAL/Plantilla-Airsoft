@@ -45,19 +45,7 @@
       "default": "h2",
       "label": "Tamaño del título"
     },
-    {
-      "type": "select",
-      "id": "icon",
-      "options": [
-        { "value": "none", "label": "Ninguno" },
-        { "value": "star-empty", "label": "Estrella" },
-        { "value": "settings", "label": "Ajustes" },
-        { "value": "shipping", "label": "Camión" },
-        { "value": "secure", "label": "Seguro" }
-      ],
-      "default": "none",
-      "label": "Icon"
-    },
+
     {
       "type": "color_scheme",
       "id": "color_scheme",
@@ -110,9 +98,17 @@
       "name": "Beneficio",
       "settings": [
         {
-          "type": "image_picker",
+          "type": "select",
           "id": "icon",
-          "label": "Icono"
+          "options": [
+            { "value": "none", "label": "Ninguno" },
+            { "value": "star-empty", "label": "Estrella" },
+            { "value": "settings", "label": "Ajustes" },
+            { "value": "shipping", "label": "Camión" },
+            { "value": "secure", "label": "Seguro" }
+          ],
+          "default": "none",
+          "label": "Icon"
         },
         {
           "type": "inline_richtext",
