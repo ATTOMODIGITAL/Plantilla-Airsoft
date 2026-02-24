@@ -99,10 +99,8 @@
     overflow-x:auto;
     gap: 1.5rem;
   }
-  .blog-grid--featured .blog__post:nth-child(1) {
-    grid-column: span 2; /* En tablet el primero ocupa todo el ancho arriba */
-  }
-}/* --- FIX ALTURA MÓVIL Y ESTILOS BASE --- */
+
+}
 
 /* 1. Forzar altura en móvil para que no sea 0px */
 @media screen and (max-width: 749px) {
