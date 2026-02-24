@@ -74,7 +74,7 @@
   opacity: 0.8;
 }
 
-.article-card .card__content .card-information{
+.article-card-wrapper .card__content .card-information{
   background:rgba(0,0,0,0.6);
   border-top-left-radius:15px;
   border-top-right-radius:15px;
