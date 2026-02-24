@@ -44,10 +44,6 @@
   justify-content: center;
 }
 
-.benefits-card__content {
-  flex: 1;
-}
-
 .benefits-card__content p  {
   margin: 0;
   font-size: 1.4rem;
