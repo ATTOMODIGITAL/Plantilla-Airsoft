@@ -59,19 +59,15 @@
   }
 }
 
-/* Layout Editorial "Bento" para Desktop */
 @media screen and (min-width: 990px) {
-  /* 1. Reset del comportamiento de Slider de Shopify para el Grid */
   .blog-grid--featured.grid {
     display: grid !important;
-    gap: 2rem; /* Espacio entre artículos */
-    grid-template-columns: 1.2fr 1fr 1fr; /* 3 columnas base */
+    gap: 2rem;
+    grid-template-columns: 1.2fr 1fr 1fr;
     grid-template-rows: repeat(2, 1fr);
     flex-wrap: nowrap;
   }
 
-  /* 2. Definición de Áreas */
-  /* El primer hijo siempre ocupa la columna izquierda completa (2 filas) */
   .blog-grid--featured .blog__post:nth-child(1) {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
@@ -79,23 +75,17 @@
     max-width: 100% !important;
   }
 
-  /* El resto de hijos ocupan las celdas de la derecha */
   .blog-grid--featured .blog__post:nth-child(n+2) {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
   }
 
-  /* 3. Comportamiento Modular según cantidad de blogs */
-  
-  /* Si hay exactamente 5 artículos (1 grande + 4 pequeños) */
   .blog-grid--featured:has(.blog__post:nth-child(5)) {
      grid-template-areas: 
       "big small1 small2"
       "big small3 small4";
   }
-
-
   
   .blog-grid--featured .blog__post:nth-child(1) .card {
     height: 100%;
