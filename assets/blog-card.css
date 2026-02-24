@@ -1,0 +1,96 @@
+/* --- ESTILO GLOBAL PARA TARJETAS DE ARTÍCULO (ESTILO BENTO/OVERLAY) --- */
+
+/* 1. Contenedor de la tarjeta: Forzamos el aspecto de "bloque sólido" */
+.article-card-wrapper .card {
+  position: relative;
+  display: flex !important;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 24px !important; /* Bordes redondeados globales */
+  border: none !important;
+  aspect-ratio: 1 / 1; /* Por defecto cuadradas, se ajustará según el contenedor */
+}
+
+/* 2. La imagen se convierte en el fondo de la tarjeta */
+.article-card .card__inner {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1;
+}
+
+.article-card .card__media {
+  height: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.article-card .card__media .media {
+  height: 100%;
+  position: relative;
+}
+
+/* 3. El contenido (texto) flota sobre la imagen */
+.article-card .card__content {
+  position: absolute !important;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Por encima de la imagen */
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-end; /* Empuja el texto hacia abajo */
+  padding: 2rem !important;
+  box-sizing: border-box;
+  
+  /* Degradado oscuro para que el texto blanco siempre sea legible */
+  background: linear-gradient(
+    to top, 
+    rgba(0, 0, 0, 0.85) 0%, 
+    rgba(0, 0, 0, 0.3) 50%, 
+    transparent 100%
+  ) !important;
+}
+
+/* 4. Estilos de texto globales (Blanco) */
+.article-card .card__heading,
+.article-card .article-card__info,
+.article-card .article-card__excerpt,
+.article-card .caption-with-letter-spacing {
+  color: #ffffff !important; /* Todo el texto en blanco */
+}
+
+.article-card .card__heading {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Ocultamos elementos que ensucian el diseño overlay en tarjetas pequeñas */
+.article-card .article-card__excerpt {
+  font-size: 1.4rem;
+  opacity: 0.9;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limitar a 2 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Ajuste para que el enlace ocupe toda la tarjeta */
+.article-card .card__heading a::after {
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+/* 5. Asegurar que en la página de blog principal no se vean bordes extra */
+.article-card-wrapper {
+  border: none !important;
+  box-shadow: none !important;
+}
