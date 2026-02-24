@@ -180,7 +180,7 @@
 }
 
 /* --- LAYOUT TABLET --- */
-@media screen and (min-width: 750px) and (max-width: 989px) {
+@media screen and (min-width: 750px) and (max-width: 990px) {
   .blog-grid--featured.grid {
     display: grid !important;
     grid-template-columns: 1fr 1fr;
