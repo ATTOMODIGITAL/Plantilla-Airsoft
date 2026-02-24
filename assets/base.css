@@ -1229,6 +1229,7 @@ button.shopify-payment-button__button--unbranded {
   background-color: rgba(var(--color-button), var(--alpha-button-background));
   border-radius:50px;
   transition:all 0.3s ease-in-out;
+  text-transform:uppercase;
 }
 
 .button:before,
