@@ -182,8 +182,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 }
 
 .rte-width {
-  max-width: 82rem;
-  margin: 0 auto 2rem;
+  max-width: 100%;
 }
 
 .list-unstyled {
