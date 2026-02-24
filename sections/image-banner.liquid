@@ -56,18 +56,34 @@
     class="banner border-30 banner--content-align-{{ section.settings.desktop_content_alignment }} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner--{{ section.settings.image_height }}{% if section.settings.stack_images_on_mobile and section.settings.image != blank and section.settings.image_2 != blank %} banner--stacked{% endif %}{% if section.settings.image_height == 'adapt' and section.settings.image != blank %} banner--adapt{% endif %}{% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}{% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
   >
     {%- if section.settings.video != blank -%}
-      <div class="banner__media media">
-        {{
-          section.settings.video
-          | video_tag:
-            autoplay: true,
-            loop: true,
-            muted: true,
-            controls: false,
-            playsinline: true,
-            class: 'banner__video'
-        }}
+      <div class="banner__media media banner__media-video {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        <!-- DESKTOP VIDEO -->
+        <div class="banner__video-desktop">
+          {{
+            section.settings.video
+            | video_tag:
+              autoplay: true,
+              loop: true,
+              muted: true,
+              controls: false,
+              playsinline: true,
+              preload: 'metadata',
+              class: 'banner__video'
+          }}
+        </div>
+
+        <!-- MOBILE FALLBACK IMAGE -->
+        {% if section.settings.image != blank %}
+          <div class="banner__video-mobile">
+            {{
+              section.settings.image
+              | image_url: width: 1500
+              | image_tag: class: 'banner__mobile-fallback', loading: 'lazy'
+            }}
+          </div>
+        {% endif %}
       </div>
+
     {%- elsif section.settings.image != blank -%}
       <div class="banner__media  media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %} ">
         {%- liquid
