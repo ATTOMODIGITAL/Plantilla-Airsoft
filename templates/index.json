@@ -332,6 +332,16 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "newsletter_banner_JpdLTQ": {
+      "type": "newsletter-banner",
+      "name": "Newsletter Banner",
+      "settings": {
+        "image": "shopify://shop_images/1684496977.webp",
+        "heading": "Únete al equipo",
+        "text": "<p>Suscríbete a nuestro newsletter y sé el primero en conocer nuevos productos, lanzamientos y promociones exclusivas.</p>",
+        "color_scheme": ""
+      }
     }
   },
   "order": [
@@ -341,6 +351,7 @@
     "benefits_slider_A84UmR",
     "featured_collection",
     "image_banner_xRb6TL",
-    "featured_blog_Az6fNE"
+    "featured_blog_Az6fNE",
+    "newsletter_banner_JpdLTQ"
   ]
 }
