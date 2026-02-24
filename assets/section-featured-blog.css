@@ -107,18 +107,6 @@
   .blog-grid--featured .card {
     height: 100% !important;
   }
-
-  .blog-grid--featured .blog__post:nth-child(1) .card__heading {
-    font-size: 3.5rem !important;
-  }
-
-  .blog-grid--featured .blog__post:nth-child(n+2) .article-card__excerpt {
-    display: none !important;
-  }
-
-  .slider-buttons {
-    display: none !important;
-  }
 }
 
 @supports not (inset: 10px) {
