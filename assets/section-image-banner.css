@@ -378,6 +378,8 @@
 
   .banner--desktop-transparent .button--secondary {
     --alpha-button-background: 0;
+    border:1px solid red;
+    border-radius:50px;
   }
 
   .banner--desktop-transparent .content-container:after {
