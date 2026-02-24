@@ -39,7 +39,7 @@
   .blog-grid--featured .blog__post.article {
     width: 85% !important; 
     flex: 0 0 85% !important;
-    min-height: 400px;
+    max-height: 300px;
     display: block !important;
   }
 
