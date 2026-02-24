@@ -3,8 +3,7 @@
   flex-wrap: wrap;
   overflow: hidden;
   border-radius: 20px; /* Bordes redondeados del banner completo */
-  background-color: #ebebeb; /* Color de fondo similar a la imagen */
-  min-height: 400px;
+  min-height: 300px;
 }
 
 .newsletter-banner__media {
