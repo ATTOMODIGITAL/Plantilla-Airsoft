@@ -75,15 +75,6 @@
   opacity: 0.8;
 }
 
-.article-card .card__heading a::after {
-  bottom: 0;
-  content: "";
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 10;
-}
 
 
 @media screen and (min-width: 990px) {
