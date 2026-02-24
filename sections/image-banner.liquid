@@ -153,10 +153,9 @@
 
                 /* ESTADO HOVER - Forzamos con el ID para ganar a base.css */
                 #Banner-{{ section.id }} .banner__buttons--{{ block.id }} .button--secondary:hover {
-                  color: {{ block.settings.secondary_button_text_hover }} !important;
+                  color: {{ block.settings.secondary_button_border_hover }} !important;
                   border: 1px solid {{ block.settings.secondary_button_border_hover }} !important;
-                  background-color: {{ block.settings.secondary_button_border_hover }} !important;
-                  opacity: 1; /* Evita que Dawn le baje la opacidad si no quieres */
+                  opacity: 1;
                 }
 
                 /* Arreglo para temas Dawn que usan ::after para el borde */

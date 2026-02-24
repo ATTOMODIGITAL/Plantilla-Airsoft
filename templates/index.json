@@ -34,6 +34,8 @@
             "button_style_secondary_1": false,
             "secondary_button_text": "#000000",
             "secondary_button_border": "#000000",
+            "secondary_button_text_hover": "#ffffff",
+            "secondary_button_border_hover": "#000000",
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
@@ -287,6 +289,8 @@
             "button_style_secondary_1": true,
             "secondary_button_text": "#ffffff",
             "secondary_button_border": "#ffffff",
+            "secondary_button_text_hover": "#ffffff",
+            "secondary_button_border_hover": "#63d66c",
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
