@@ -1,17 +1,22 @@
-/* --- ESTILO GLOBAL PARA TARJETAS DE ARTÍCULO (ESTILO BENTO/OVERLAY) --- */
+/* --- COMPONENT-ARTICLE-CARD / BLOG-CARD CUSTOM --- */
 
-/* 1. Contenedor de la tarjeta: Forzamos el aspecto de "bloque sólido" */
+.article-card-wrapper {
+  height: 100%;
+}
+
+/* 1. Reset y Estructura Base de la Card Overlay */
 .article-card-wrapper .card {
   position: relative;
   display: flex !important;
   flex-direction: column;
   overflow: hidden;
-  border-radius: 24px !important; /* Bordes redondeados globales */
+  border-radius: 24px !important; /* Bordes redondeados de la imagen */
   border: none !important;
-  aspect-ratio: 1 / 1; /* Por defecto cuadradas, se ajustará según el contenedor */
+  height: 100% !important;
+  background-color: transparent;
 }
 
-/* 2. La imagen se convierte en el fondo de la tarjeta */
+/* 2. Imagen de fondo (ocupa todo el contenedor) */
 .article-card .card__inner {
   position: absolute !important;
   top: 0;
@@ -30,55 +35,61 @@
 .article-card .card__media .media {
   height: 100%;
   position: relative;
+  bottom: 0;
+  top: 0;
 }
 
-/* 3. El contenido (texto) flota sobre la imagen */
+.article-card .card__media .media img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* 3. Contenido (Texto) Flotando sobre la imagen */
 .article-card .card__content {
   position: absolute !important;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2; /* Por encima de la imagen */
+  z-index: 2;
   display: flex !important;
   flex-direction: column;
-  justify-content: flex-end; /* Empuja el texto hacia abajo */
-  padding: 2rem !important;
+  justify-content: flex-end; /* Alinea el texto al fondo */
+  padding: 2.5rem !important;
   box-sizing: border-box;
   
-  /* Degradado oscuro para que el texto blanco siempre sea legible */
+  /* Degradado para legibilidad del texto blanco */
   background: linear-gradient(
     to top, 
-    rgba(0, 0, 0, 0.85) 0%, 
-    rgba(0, 0, 0, 0.3) 50%, 
+    rgba(0, 0, 0, 0.8) 0%, 
+    rgba(0, 0, 0, 0.2) 50%, 
     transparent 100%
   ) !important;
 }
 
-/* 4. Estilos de texto globales (Blanco) */
+/* 4. Tipografía y Colores */
 .article-card .card__heading,
 .article-card .article-card__info,
 .article-card .article-card__excerpt,
 .article-card .caption-with-letter-spacing {
-  color: #ffffff !important; /* Todo el texto en blanco */
+  color: #ffffff !important;
+  text-align: left;
 }
 
 .article-card .card__heading {
   margin-bottom: 0.5rem;
   font-weight: 600;
+  line-height: 1.1;
 }
 
-/* Ocultamos elementos que ensucian el diseño overlay en tarjetas pequeñas */
-.article-card .article-card__excerpt {
-  font-size: 1.4rem;
-  opacity: 0.9;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* Limitar a 2 líneas */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+.article-card .article-card__info {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  opacity: 0.8;
 }
 
-/* Ajuste para que el enlace ocupe toda la tarjeta */
+/* Ajuste de enlace para que toda la tarjeta sea clickable */
 .article-card .card__heading a::after {
   bottom: 0;
   content: "";
@@ -89,8 +100,57 @@
   z-index: 10;
 }
 
-/* 5. Asegurar que en la página de blog principal no se vean bordes extra */
-.article-card-wrapper {
-  border: none !important;
-  box-shadow: none !important;
+/* --- LOGICA DE DISTRIBUCIÓN DEL GRID (DESKTOP) --- */
+
+@media screen and (min-width: 990px) {
+  /* Contenedor del Grid */
+  .blog-grid--featured {
+    display: grid !important;
+    /* 1fr (50%) | 0.5fr (25%) | 0.5fr (25%) */
+    grid-template-columns: 1fr 0.5fr 0.5fr !important;
+    grid-template-rows: repeat(2, 300px) !important; /* Altura equitativa */
+    gap: 20px !important;
+    list-style: none;
+    padding: 0;
+  }
+
+  /* Reset de items de Shopify */
+  .blog-grid--featured .blog__post.grid__item {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* El primer artículo ocupa el 50% izquierdo (2 filas de alto) */
+  .blog-grid--featured .blog__post:nth-child(1) {
+    grid-column: 1 / 2 !important;
+    grid-row: 1 / 3 !important;
+  }
+
+  /* Tamaños de fuente diferenciados */
+  .blog-grid--featured .blog__post:nth-child(1) .card__heading {
+    font-size: 3.2rem !important;
+  }
+
+  .blog-grid--featured .blog__post:nth-child(n+2) .card__heading {
+    font-size: 1.8rem !important;
+  }
+
+  /* Ocultar extracto en los pequeños para no saturar */
+  .blog-grid--featured .blog__post:nth-child(n+2) .article-card__excerpt {
+    display: none !important;
+  }
+}
+
+/* Ajuste para Tablet */
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .blog-grid--featured {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 15px !important;
+  }
+  .blog-grid--featured .blog__post:nth-child(1) {
+    grid-column: span 2 !important;
+  }
 }
