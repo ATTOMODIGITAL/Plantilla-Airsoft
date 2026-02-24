@@ -73,7 +73,7 @@
   font-size: 1.3rem;
   opacity: 0.8;
 }
-
+.article-card .card__content{padding:0px;}
 .article-card-wrapper .card__content .card__information{
   background:rgba(0,0,0,0.6);
   border-top-left-radius:15px;
