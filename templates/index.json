@@ -320,7 +320,7 @@
       "name": "t:sections.featured-blog.presets.name",
       "settings": {
         "blog": "",
-        "post_limit": 3,
+        "post_limit": 5,
         "heading": "Historias, consejos y partidas",
         "heading_size": "h1",
         "columns_desktop": 3,
