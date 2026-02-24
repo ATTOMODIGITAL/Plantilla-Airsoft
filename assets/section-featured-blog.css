@@ -94,8 +94,9 @@
 
 @media screen and (min-width: 750px) and (max-width: 989px) {
   .blog-grid--featured.grid {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr;
+    display: flex !important;
+    flex-direction:row;
+    overflow-x:auto;
     gap: 1.5rem;
   }
   .blog-grid--featured .blog__post:nth-child(1) {
