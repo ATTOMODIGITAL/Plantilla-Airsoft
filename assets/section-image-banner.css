@@ -362,6 +362,9 @@
   padding: 4rem 3.5rem;
 }
 
+.banner--desktop-transparent .button--secondary:hover{  --color-button: var(--color-secondary-button);
+  --color-button-text: var(--color-secondary-button-text);}
+
 @media screen and (min-width: 750px) {
   .banner__box {
     padding: 4rem 3.5rem;
@@ -378,8 +381,6 @@
 
   .banner--desktop-transparent .button--secondary {
     --alpha-button-background: 0;
-    border:1px solid red;
-    border-radius:50px;
   }
 
   .banner--desktop-transparent .content-container:after {
