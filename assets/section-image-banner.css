@@ -362,8 +362,7 @@
   padding: 4rem 3.5rem;
 }
 
-.banner--desktop-transparent .button--secondary:hover{  --color-button: var(--color-secondary-button);
-  --color-button-text: var(--color-secondary-button-text);}
+.banner--desktop-transparent .button--secondary:hover{color: rgb(var(--color-button-text)); border: 1px solid rgb(var(--color-button-text));}
 
 @media screen and (min-width: 750px) {
   .banner__box {
