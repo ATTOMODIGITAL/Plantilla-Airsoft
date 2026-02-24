@@ -137,3 +137,29 @@
     }
   }
 }
+
+/* --- AJUSTES DE BORDER RADIUS ESPECÍFICOS PARA GRID (990px+) --- */
+@media screen and (min-width: 990px) {
+  /* El grande (Primer post) */
+  .blog-grid--featured .blog__post:nth-child(1) .card,
+  .blog-grid--featured .blog__post:nth-child(1) .card-wrapper,
+  .blog-grid--featured .blog__post:nth-child(1) .card__inner,
+  .blog-grid--featured .blog__post:nth-child(1) .card__media {
+    border-radius: 30px !important;
+  }
+
+  /* El resto (Posts pequeños) */
+  .blog-grid--featured .blog__post:nth-child(n+2) .card,
+  .blog-grid--featured .blog__post:nth-child(n+2) .card-wrapper,
+  .blog-grid--featured .blog__post:nth-child(n+2) .card__inner,
+  .blog-grid--featured .blog__post:nth-child(n+2) .card__media {
+    border-radius: 15px !important;
+  }
+  
+  /* Aseguramos que el contenido overlay también respete el redondeado */
+  .blog-grid--featured .card__content {
+    border-radius: inherit;
+  }
+}
+
+/* En móvil y tablet no añadimos nada, para que herede el "por defecto" del tema */
