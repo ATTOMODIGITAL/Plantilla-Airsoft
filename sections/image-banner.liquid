@@ -152,7 +152,6 @@
               {%- style -%}
                 /* Scoped a este bloque de botones */
                 #Banner-{{ section.id }} .banner__buttons--{{ block.id }} .button--secondary {
-                  background-color: {{ block.settings.secondary_button_bg }};
                   color: {{ block.settings.secondary_button_text }};
                   border: 1px solid {{ block.settings.secondary_button_border }};
                 }
@@ -423,7 +422,6 @@
         },
 
         { "type": "header", "content": "Secondary button colors" },
-        { "type": "color", "id": "secondary_button_bg", "label": "Secondary background", "default": "#ffffff" },
         { "type": "color", "id": "secondary_button_text", "label": "Secondary text", "default": "#000000" },
         { "type": "color", "id": "secondary_button_border", "label": "Secondary border", "default": "#000000" },
 
