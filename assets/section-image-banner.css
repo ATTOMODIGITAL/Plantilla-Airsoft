@@ -362,6 +362,7 @@
   padding: 4rem 3.5rem;
 }
 
+.button--primary:hover{opacity:0.8};
 .button--secondary:hover{color: rgb(var(--color-button-text)); border: 1px solid rgb(var(--color-button-text));}
 
 @media screen and (min-width: 750px) {
