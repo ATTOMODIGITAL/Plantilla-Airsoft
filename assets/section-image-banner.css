@@ -362,7 +362,10 @@
   padding: 4rem 3.5rem;
 }
 
-.button--primary:hover{opacity:0.8};
+.button--primary:hover {
+    opacity: 1 !important; /* Forzamos a que no sea transparente */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Opcional: un toque de sombra */
+}
 .button--secondary:hover{color: rgb(var(--color-button-text)); border: 1px solid rgb(var(--color-button-text));}
 
 @media screen and (min-width: 750px) {
