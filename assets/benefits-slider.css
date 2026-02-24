@@ -1,6 +1,7 @@
 .benefits-slider {
   display: flex;
   flex-wrap: nowrap;
+  justify-content:space-between;
   overflow-x: auto;
   scroll-snap-type: x proximity;
   scrollbar-width: none; 
