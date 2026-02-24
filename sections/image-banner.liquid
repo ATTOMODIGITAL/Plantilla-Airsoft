@@ -1,8 +1,8 @@
 {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
 {%- style -%}
-  #Banner-{{ section.id }} .button--secondary:hover {
-    background-color: {{ section.settings.secondary_button_bg_hover }};
-    color: {{ section.settings.secondary_button_text_hover }};
+  #Banner-{{ section.id }} .button--secondary {
+    color: {{ section.settings.secondary_button_text }};
+    border: 1px solid {{ section.settings.secondary_button_border }};
   }
 {%- endstyle -%}
 {%- if section.settings.image_height == 'adapt' and section.settings.image != blank -%}
@@ -491,12 +491,6 @@
           "id": "secondary_button_bg_hover",
           "label": "Secondary button background hover",
           "default": "#000000"
-        },
-        {
-          "type": "color",
-          "id": "secondary_button_text_hover",
-          "label": "Secondary button text hover",
-          "default": "#ffffff"
         },
         {
           "type": "header",
