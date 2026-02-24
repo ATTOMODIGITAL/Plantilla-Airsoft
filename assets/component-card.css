@@ -139,8 +139,8 @@
   grid-row-start: 2;
   padding: 2rem;
   background:rgba(0,0,0,0.6);
-  border-top-left-radius:30px;
-  border-top-right-radius:30px;
+  border-top-left-radius:15px;
+  border-top-right-radius:15px;
 }
 
 .card:not(.ratio) > .card__content {
