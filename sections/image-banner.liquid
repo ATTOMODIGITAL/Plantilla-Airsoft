@@ -25,14 +25,8 @@
 
 {%- style -%}
   #Banner-{{ section.id }} .banner__buttons--{{ block.id }} .button--secondary {
-    background-color: {{ block.settings.secondary_button_bg }};
-    color: {{ block.settings.secondary_button_text }};
-    border: 1px solid {{ block.settings.secondary_button_border }};
-  }
-
-  #Banner-{{ section.id }} .banner__buttons--{{ block.id }} .button--secondary:hover {
-    color: rgb(var(--color-button-text));
-    border: 1px solid rgb(var(--color-button-text));
+    --color-button-text: {{ block.settings.secondary_button_text | color_to_rgb | remove: 'rgb(' | remove: ')' }};
+    --color-button: {{ block.settings.secondary_button_border | color_to_rgb | remove: 'rgb(' | remove: ')' }};
   }
 {%- endstyle -%}
 
