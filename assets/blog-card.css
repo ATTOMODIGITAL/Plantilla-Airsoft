@@ -64,8 +64,17 @@
 }
 
 .article-card .card__heading {
+  margin-bottom: 0.5rem;
   line-height: 1.1;
 }
+
+.article-card .article-card__info {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  opacity: 0.8;
+}
+
+
 
 @media screen and (min-width: 990px) {
   .blog-grid--featured {
