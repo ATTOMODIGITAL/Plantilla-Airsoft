@@ -38,7 +38,7 @@
   color:black;
 }
 
-.newsletter-banner__text{color:black;}
+.newsletter-banner__text{color:black; margin-bottom:20px;}
 
 /* Estilo del Input */
 .newsletter-banner__form .field {
