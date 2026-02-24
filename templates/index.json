@@ -295,6 +295,7 @@
       ],
       "settings": {
         "image": "shopify://shop_images/theme_cover_image.jpg",
+        "video": "shopify://files/videos/vecteezy_professional-soldier-with-weapon-in-military-uniform-stands_28623637.webm",
         "image_overlay_opacity": 20,
         "image_height": "small",
         "image_behavior": "zoom-in",
