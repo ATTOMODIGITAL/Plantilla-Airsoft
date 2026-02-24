@@ -144,15 +144,24 @@
 
             {%- when 'buttons' -%}
               {%- style -%}
-                /* Sobreescribimos las variables para que el hover de base.css funcione */
+                /* ESTADO NORMAL */
                 #Banner-{{ section.id }} .banner__buttons--{{ block.id }} .button--secondary {
-                  --color-button: {{ block.settings.secondary_button_border.red }}, {{ block.settings.secondary_button_border.green }}, {{ block.settings.secondary_button_border.blue }};
-                  --color-button-text: {{ block.settings.secondary_button_text.red }}, {{ block.settings.secondary_button_text.green }}, {{ block.settings.secondary_button_text.blue }};
-
-                  /* Aplicamos las variables al estado inicial */
-                  color: rgb(var(--color-button-text));
-                  border: 1px solid rgb(var(--color-button));
+                  color: {{ block.settings.secondary_button_text }};
+                  border: 1px solid {{ block.settings.secondary_button_border }};
                   background-color: transparent;
+                }
+
+                /* ESTADO HOVER - Forzamos con el ID para ganar a base.css */
+                #Banner-{{ section.id }} .banner__buttons--{{ block.id }} .button--secondary:hover {
+                  color: {{ block.settings.secondary_button_text_hover }} !important;
+                  border: 1px solid {{ block.settings.secondary_button_border_hover }} !important;
+                  background-color: {{ block.settings.secondary_button_border_hover }} !important;
+                  opacity: 1; /* Evita que Dawn le baje la opacidad si no quieres */
+                }
+
+                /* Arreglo para temas Dawn que usan ::after para el borde */
+                #Banner-{{ section.id }} .banner__buttons--{{ block.id }} .button--secondary:after {
+                  box-shadow: none !important;
                 }
               {%- endstyle -%}
 
@@ -400,45 +409,26 @@
       "name": "t:sections.image-banner.blocks.buttons.name",
       "limit": 1,
       "settings": [
-        { "type": "header", "content": "t:sections.image-banner.blocks.buttons.settings.header_1.content" },
+        { "type": "header", "content": "Boton 1" },
+        { "type": "text", "id": "button_label_1", "default": "Botón 1", "label": "Etiqueta" },
+        { "type": "url", "id": "button_link_1", "label": "Enlace" },
+        { "type": "checkbox", "id": "button_style_secondary_1", "default": false, "label": "Usar estilo secundario" },
+
+        { "type": "header", "content": "Colores Personalizados (Solo Botón Secundario)" },
+        { "type": "color", "id": "secondary_button_text", "label": "Texto (Normal)", "default": "#000000" },
+        { "type": "color", "id": "secondary_button_border", "label": "Borde (Normal)", "default": "#000000" },
+        { "type": "color", "id": "secondary_button_text_hover", "label": "Texto (Hover)", "default": "#ffffff" },
         {
-          "type": "text",
-          "id": "button_label_1",
-          "default": "t:sections.image-banner.blocks.buttons.settings.button_label_1.default",
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_label_1.label"
+          "type": "color",
+          "id": "secondary_button_border_hover",
+          "label": "Borde y Fondo (Hover)",
+          "default": "#000000"
         },
-        {
-          "type": "url",
-          "id": "button_link_1",
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_link_1.label"
-        },
-        {
-          "type": "checkbox",
-          "id": "button_style_secondary_1",
-          "default": false,
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_1.label"
-        },
-        { "type": "header", "content": "Secondary button colors" },
-        { "type": "color", "id": "secondary_button_text", "label": "Secondary text", "default": "#000000" },
-        { "type": "color", "id": "secondary_button_border", "label": "Secondary border", "default": "#000000" },
-        { "type": "header", "content": "t:sections.image-banner.blocks.buttons.settings.header_2.content" },
-        {
-          "type": "text",
-          "id": "button_label_2",
-          "default": "t:sections.image-banner.blocks.buttons.settings.button_label_2.default",
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_label_2.label"
-        },
-        {
-          "type": "url",
-          "id": "button_link_2",
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_link_2.label"
-        },
-        {
-          "type": "checkbox",
-          "id": "button_style_secondary_2",
-          "default": false,
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_2.label"
-        }
+
+        { "type": "header", "content": "Boton 2" },
+        { "type": "text", "id": "button_label_2", "default": "Botón 2", "label": "Etiqueta" },
+        { "type": "url", "id": "button_link_2", "label": "Enlace" },
+        { "type": "checkbox", "id": "button_style_secondary_2", "default": false, "label": "Usar estilo secundario" }
       ]
     }
   ],
