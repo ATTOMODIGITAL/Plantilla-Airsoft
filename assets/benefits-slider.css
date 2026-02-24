@@ -16,8 +16,6 @@
 }
 
 .benefits-item {
-  width:350px;
-  height:200px;
   scroll-snap-align: start;
   list-style: none; 
 }
@@ -31,7 +29,8 @@
   border-radius: 0.8rem;
   background: rgb(var(--color-background));
   border: 1px solid rgba(var(--color-foreground), 0.08);
-  height: 100%;
+  width:350px;
+  height:200px;
 }
 
 .benefits-card__icon {
