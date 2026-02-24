@@ -17,7 +17,8 @@
 
 .benefits-item {
   flex: 0 0 auto;
-  width: 28rem; 
+  width: 100%; 
+  max-width:250px;
   scroll-snap-align: start;
   list-style: none; 
 }
