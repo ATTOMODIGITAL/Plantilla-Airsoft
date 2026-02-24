@@ -4,8 +4,10 @@
 <div
   class="page-width-desktop"
 >
-  style="padding-top:{{ section.settings.padding_top }}; padding-bottom:{{ section.settings.padding_bottom }};"
-  <div class="slider-mobile-gutter">
+  <div
+    class="slider-mobile-gutter"
+    style="padding-top:{{ section.settings.padding_top }}; padding-bottom:{{ section.settings.padding_bottom }};"
+  >
     <ul class="benefits-slider " role="list">
       {%- for block in section.blocks -%}
         <li class="benefits-item" {{ block.shopify_attributes }}>
