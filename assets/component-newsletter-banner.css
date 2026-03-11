@@ -58,7 +58,7 @@
 }
 
 .newsletter-banner__form .field__input::placeholder {
-  color: #cccccc;
+  color: white;
   font-size: 1.2rem;
   text-transform: uppercase;
 }
