@@ -1,0 +1,186 @@
+<section class="timeline-history">
+  <div class="page-width">
+    <h2 class="timeline-title">{{ section.settings.title }}</h2>
+
+    <div class="timeline-nav">
+      {% for block in section.blocks %}
+        <button
+          class="timeline-dot {% if forloop.first %}active{% endif %}"
+          data-index="{{ forloop.index0 }}"
+        >
+          {{ block.settings.year }}
+        </button>
+      {% endfor %}
+    </div>
+
+    <div class="timeline-content-wrapper">
+      {% for block in section.blocks %}
+        <div class="timeline-content {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}">
+          <div class="timeline-grid">
+            <div class="timeline-image">
+              {% if block.settings.image %}
+                <img
+                  src="{{ block.settings.image | image_url: width: 900 }}"
+                  alt="{{ block.settings.title }}"
+                  loading="lazy"
+                >
+              {% endif %}
+            </div>
+
+            <div class="timeline-text">
+              <h3>{{ block.settings.title }}</h3>
+              <p>{{ block.settings.text }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline-history{
+    background:#111;
+    padding:80px 20px;
+    border-radius:24px;
+    color:white;
+  }
+
+  .timeline-title{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:40px;
+  }
+
+  .timeline-nav{
+    display:flex;
+    justify-content:center;
+    gap:24px;
+    margin-bottom:50px;
+    flex-wrap:wrap;
+  }
+
+  .timeline-dot{
+    background:#2a2a2a;
+    color:#aaa;
+    border:none;
+    padding:10px 18px;
+    border-radius:20px;
+    cursor:pointer;
+    transition:all .25s;
+  }
+
+  .timeline-dot.active{
+    background:#63d471;
+    color:#000;
+  }
+
+  .timeline-content{
+    display:none;
+  }
+
+  .timeline-content.active{
+    display:block;
+  }
+
+  .timeline-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+  }
+
+  .timeline-image img{
+    width:100%;
+    border-radius:20px;
+  }
+
+  .timeline-text h3{
+    font-size:28px;
+    margin-bottom:16px;
+  }
+
+  .timeline-text p{
+    color:#cfcfcf;
+    line-height:1.6;
+  }
+
+  @media(max-width:900px){
+
+  .timeline-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const dots = document.querySelectorAll('.timeline-dot');
+    const items = document.querySelectorAll('.timeline-content');
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const index = dot.dataset.index;
+
+        dots.forEach((d) => d.classList.remove('active'));
+        items.forEach((i) => i.classList.remove('active'));
+
+        dot.classList.add('active');
+        document.querySelector(`.timeline-content[data-index="${index}"]`).classList.add('active');
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Timeline History",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Conoce nuestra historia"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Año",
+      "settings": [
+        {
+          "type": "text",
+          "id": "year",
+          "label": "Año",
+          "default": "1995"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título",
+          "default": "Primeras partidas"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texto",
+          "default": "Todo empezó con unas partidas..."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Timeline History"
+    }
+  ]
+}
+{% endschema %}
