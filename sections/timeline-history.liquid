@@ -1,5 +1,5 @@
 <section class="timeline-history">
-  <div class="page-width">
+  <div class="page-width gradient color-{{ section.settings.color_scheme }}">
     <h2 class="timeline-title">{{ section.settings.title }}</h2>
 
     <div class="timeline-nav">
@@ -138,6 +138,12 @@
 {
   "name": "Timeline History",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
     {
       "type": "text",
       "id": "title",
