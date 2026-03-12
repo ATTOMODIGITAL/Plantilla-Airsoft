@@ -49,6 +49,7 @@
       ],
       "settings": {
         "image": "shopify://shop_images/theme_cover_image.jpg",
+        "full_width": true,
         "image_overlay_opacity": 20,
         "image_height": "large",
         "image_behavior": "zoom-in",
@@ -302,6 +303,7 @@
         "buttons_Xmj7jh"
       ],
       "settings": {
+        "full_width": false,
         "video": "shopify://files/videos/vecteezy_professional-soldier-with-weapon-in-military-uniform-stands_28623637.webm",
         "image_overlay_opacity": 20,
         "image_height": "small",
@@ -342,6 +344,53 @@
         "text": "<p>Suscríbete a nuestro newsletter y sé el primero en conocer nuevos productos, lanzamientos y promociones exclusivas.</p>",
         "color_scheme": ""
       }
+    },
+    "timeline_history_q8bbM3": {
+      "type": "timeline-history",
+      "blocks": {
+        "step_7cTAQG": {
+          "type": "step",
+          "settings": {
+            "year": "1995",
+            "title": "Primeras partidas",
+            "text": "Todo empezó con unas partidas..."
+          }
+        },
+        "step_XkR98t": {
+          "type": "step",
+          "settings": {
+            "year": "1995",
+            "title": "Primeras partidas",
+            "text": "Todo empezó con unas partidas..."
+          }
+        },
+        "step_hMBhnU": {
+          "type": "step",
+          "settings": {
+            "year": "1995",
+            "title": "Primeras partidas",
+            "text": "Todo empezó con unas partidas..."
+          }
+        },
+        "step_8fQThd": {
+          "type": "step",
+          "settings": {
+            "year": "1995",
+            "title": "Primeras partidas",
+            "text": "Todo empezó con unas partidas..."
+          }
+        }
+      },
+      "block_order": [
+        "step_7cTAQG",
+        "step_XkR98t",
+        "step_hMBhnU",
+        "step_8fQThd"
+      ],
+      "name": "Timeline History",
+      "settings": {
+        "title": "Conoce nuestra historia"
+      }
     }
   },
   "order": [
@@ -352,6 +401,7 @@
     "featured_collection",
     "image_banner_xRb6TL",
     "featured_blog_Az6fNE",
-    "newsletter_banner_JpdLTQ"
+    "newsletter_banner_JpdLTQ",
+    "timeline_history_q8bbM3"
   ]
 }
