@@ -47,7 +47,7 @@
     padding: 80px 20px;
     border-radius: 24px;
     color: white;
-    overflow: hidden; /* Evita scroll lateral durante la animación */
+    overflow: hidden;
   }
 
   .timeline-title {
@@ -68,10 +68,10 @@
     background: #2a2a2a;
     color: #aaa;
     border: none;
-    padding: 10px 22px;
+    padding: 10px 18px;
     border-radius: 20px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all .25s ease;
     position: relative;
     font-weight: bold;
   }
@@ -79,10 +79,23 @@
   .timeline-dot.active {
     background: #63d471;
     color: #000;
-    transform: scale(1.1); /* Efecto de aumento al estar activo */
+    transform: scale(1.1);
   }
 
-  /* El contenido que se oculta y se muestra */
+  /* Restaurado: El puntito conector */
+  .timeline-dot:not(:last-child)::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: #2a2a2a;
+    border-radius: 50%;
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Animación del contenido */
   .timeline-content {
     display: none;
     opacity: 0;
@@ -90,18 +103,17 @@
 
   .timeline-content.active {
     display: block;
-    animation: slideIn 0.5s ease forwards;
+    animation: fadeInSlide 0.5s ease forwards;
   }
 
-  /* Animación de entrada: Fade + Slide */
-  @keyframes slideIn {
+  @keyframes fadeInSlide {
     from {
       opacity: 0;
-      transform: translateX(30px);
+      transform: translateY(20px);
     }
     to {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateY(0);
     }
   }
 
@@ -117,7 +129,6 @@
     aspect-ratio: 16/10;
     overflow: hidden;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   }
 
   .timeline-image img {
@@ -125,34 +136,30 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s ease;
-  }
-
-  /* Efecto extra: la imagen hace zoom suave cuando aparece */
-  .timeline-content.active .timeline-image img {
-    transform: scale(1.05);
   }
 
   .timeline-text h3 {
-    font-size: 32px;
+    font-size: 28px;
     margin-bottom: 16px;
     color: #63d471;
   }
 
   .timeline-text p {
     color: #cfcfcf;
-    line-height: 1.8;
-    font-size: 18px;
+    line-height: 1.6;
   }
 
-  @media(max-width:900px){
+  @media(max-width:900px) {
     .timeline-grid {
       grid-template-columns: 1fr;
       gap: 30px;
-      text-align: center;
+    }
+    .timeline-dot:not(:last-child)::after {
+      display: none; /* Opcional: quitar conectores en móvil si hay mucho wrap */
     }
   }
 </style>
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const dots = document.querySelectorAll('.timeline-dot');
