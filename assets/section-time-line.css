@@ -46,7 +46,7 @@
   background:#6b6b6b;
   border-radius:50%;
   position:absolute;
-  right:50%;
+  right:-12px;
   top:50%;
   transform:translateY(-50%);
 }
