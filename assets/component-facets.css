@@ -78,6 +78,8 @@
 
 .facet-filters__field .select {
   width: auto;
+  padding:8px;
+  background:#292929;
 }
 
 .facet-filters__field .select:after,
