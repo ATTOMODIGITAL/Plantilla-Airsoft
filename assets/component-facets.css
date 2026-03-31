@@ -82,7 +82,9 @@
   background:#292929;
   border-radius:50px;
 }
-
+.facet-filters__field .select .svg-wrapper{
+  position:static !important;
+}
 .facet-filters__field .select:after,
 .facet-filters__field .select:before,
 .mobile-facets__sort .select:after,
