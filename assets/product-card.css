@@ -50,7 +50,11 @@
   flex-direction: column;
   justify-content: flex-start;
 }
-
+.custom-card-info-group {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 .custom-card-heading {
   font-size: 1.4rem;
   margin: 0 0 10px 0;
