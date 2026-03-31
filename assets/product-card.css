@@ -85,7 +85,7 @@
 
 /* Botón Quick Add al fondo */
 .custom-card-quick-add {
-  margin-top: 15px;
+  margin-top: auto; 
   width: 100%;
 }
 
