@@ -1,0 +1,204 @@
+{%- if card_product and card_product != empty -%}
+  {%- liquid
+    assign ratio = 1
+    if card_product.featured_media and media_aspect_ratio == 'portrait'
+      assign ratio = 0.8
+    elsif card_product.featured_media and media_aspect_ratio == 'adapt'
+      assign ratio = card_product.featured_media.aspect_ratio
+    endif
+    if ratio == 0 or ratio == null
+      assign ratio = 1
+    endif
+  -%}
+  <div class="custom-card-wrapper underline-links-hover" style="background-color:{{settings.product_bg_color }}">
+    <div class="custom-card-main {% if card_product.featured_media %} custom-card--media{% else %} custom-card--text{% endif %}">
+      {%- comment -%} SECCIÓN IMAGEN (1:1) {%- endcomment -%}
+      <div class="custom-card-inner" style="--ratio-percent: 100%;">
+        {%- if card_product.featured_media -%}
+          <div class="custom-card-media">
+            <div class="media media--transparent media--hover-effect">
+              <img
+                srcset="
+                  {%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
+                  {%- if card_product.featured_media.width >= 360 -%}{{ card_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
+                  {{ card_product.featured_media | image_url }} {{ card_product.featured_media.width }}w
+                "
+                src="{{ card_product.featured_media | image_url: width: 533 }}"
+                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, calc((100vw - 35px) / 2)"
+                alt="{{ card_product.featured_media.alt | escape }}"
+                class="motion-reduce"
+                {% unless lazy_load == false %}
+                  loading="lazy"
+                {% endunless %}
+                width="{{ card_product.featured_media.width }}"
+                height="{{ card_product.featured_media.height }}"
+              >
+              {%- if card_product.media[1] != null and show_secondary_image -%}
+                <img
+                  srcset="
+                    {%- if card_product.media[1].width >= 165 -%}{{ card_product.media[1] | image_url: width: 165 }} 165w,{%- endif -%}
+                    {{ card_product.media[1] | image_url }} {{ card_product.media[1].width }}w
+                  "
+                  src="{{ card_product.media[1] | image_url: width: 533 }}"
+                  alt="{{ card_product.media[1].alt | escape }}"
+                  class="motion-reduce"
+                  loading="lazy"
+                  width="{{ card_product.media[1].width }}"
+                  height="{{ card_product.media[1].height }}"
+                >
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+
+        <div class="custom-card-badge-container">
+          {%- if card_product.available == false -%}
+            <span class="badge color-{{ settings.sold_out_badge_color_scheme }}">
+              {{- 'products.product.sold_out' | t -}}
+            </span>
+          {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
+            <span class="badge color-{{ settings.sale_badge_color_scheme }}">
+              {{- 'products.product.on_sale' | t -}}
+            </span>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- comment -%} SECCIÓN INFORMACIÓN {%- endcomment -%}
+      <div class="custom-card-content">
+        <div class="custom-card-info-top">
+          <h3 class="custom-card-heading">
+            <a href="{{ card_product.url }}" class="full-unstyled-link">
+              {{ card_product.title | escape }}
+            </a>
+          </h3>
+          <div class="custom-card-details">
+            {%- if show_vendor -%}
+              <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
+            {%- endif -%}
+
+            {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
+              {%- comment -%} MANTENEMOS LÓGICA DE RATING {%- endcomment -%}
+              <div class="rating" role="img" aria-label="{{ card_product.metafields.reviews.rating.value }}">
+                <span
+                  aria-hidden="true"
+                  class="rating-star"
+                  style="--rating: {{ card_product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ card_product.metafields.reviews.rating.value.scale_max }};"
+                ></span>
+              </div>
+            {%- endif -%}
+
+            {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+
+            {%- if card_product.quantity_price_breaks_configured? -%}
+              {%- comment -%} LÓGICA DE PRECIOS POR VOLUMEN (BLOQUE COMPLETO) {%- endcomment -%}
+              <div class="custom-card-volume-pricing">
+                {% if card_product.variants_count == 1 and quick_add == 'bulk' %}
+                  {% liquid
+                    assign quantity_rule = card_product.selected_or_first_available_variant.quantity_rule
+                    assign has_qty_rules = false
+                    if quantity_rule.increment > 1 or quantity_rule.min > 1 or quantity_rule.max != null
+                      assign has_qty_rules = true
+                    endif
+                  %}
+                  <quantity-popover>
+                    <button class="button button--tertiary">
+                      <span class="caption">{{ 'products.product.volume_pricing.note' | t }}</span>
+                    </button>
+                    {%- comment -%} Popover modal de precios por volumen {%- endcomment -%}
+                    <div
+                      class="global-settings-popup"
+                      tabindex="-1"
+                      hidden
+                      id="quantity-popover-info-{{ card_product.selected_or_first_available_variant.id }}"
+                    >
+                      {%- if card_product.selected_or_first_available_variant.quantity_price_breaks.size > 0 -%}
+                        <volume-pricing>
+                          <ul class="list-unstyled">
+                            {%- for price_break in card_product.selected_or_first_available_variant.quantity_price_breaks -%}
+                              <li>
+                                <span>{{ price_break.minimum_quantity }}+</span> -
+                                <span>{{ price_break.price | money_with_currency }}</span>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        </volume-pricing>
+                      {%- endif -%}
+                    </div>
+                  </quantity-popover>
+                {% else %}
+                  <span class="caption">{{ 'products.product.volume_pricing.note' | t }}</span>
+                {% endif %}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+
+        {%- comment -%} SECCIÓN BOTONES (QUICK ADD / BULK) {%- endcomment -%}
+        <div class="custom-card-quick-add">
+          {% assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id %}
+          {% if quick_add == 'standard' %}
+            <div class="quick-add no-js-hidden">
+              {%- if card_product.variants_count > 1 -%}
+                <modal-opener data-modal="#QuickAdd-{{ card_product.id }}">
+                  <button
+                    id="{{ product_form_id }}-submit"
+                    type="submit"
+                    class="button button--full-width custom-card-btn"
+                  >
+                    {{ 'products.product.choose_options' | t }}
+                  </button>
+                </modal-opener>
+                <quick-add-modal id="QuickAdd-{{ card_product.id }}" class="quick-add-modal">
+                  <div role="dialog" class="quick-add-modal__content global-settings-popup" tabindex="-1">
+                    <button id="ModalClose-{{ card_product.id }}" type="button" class="quick-add-modal__toggle">
+                      {% render 'icon-close' %}
+                    </button>
+                    <div id="QuickAddInfo-{{ card_product.id }}" class="quick-add-modal__content-info"></div>
+                  </div>
+                </quick-add-modal>
+              {%- else -%}
+                <product-form data-section-id="{{ section.id }}">
+                  {%- form 'product',
+                    card_product,
+                    id: product_form_id,
+                    class: 'form',
+                    data-type: 'add-to-cart-form'
+                  -%}
+                    <input type="hidden" name="id" value="{{ card_product.selected_or_first_available_variant.id }}">
+                    <button
+                      id="{{ product_form_id }}-submit"
+                      type="submit"
+                      class="button button--full-width custom-card-btn"
+                    >
+                      <span>{{ 'products.product.add_to_cart' | t }}</span>
+                      {%- render 'loading-spinner' -%}
+                    </button>
+                  {%- endform -%}
+                </product-form>
+              {%- endif -%}
+            </div>
+          {% elsif quick_add == 'bulk' %}
+            {%- comment -%} LÓGICA DE COMPRA AL POR MAYOR (BULK) {%- endcomment -%}
+            {% if card_product.variants_count == 1 %}
+              <quick-add-bulk
+                data-min="{{ card_product.selected_or_first_available_variant.quantity_rule.min }}"
+                id="quick-add-bulk-{{ card_product.selected_or_first_available_variant.id }}"
+                class="quick-add-bulk"
+              >
+                {% render 'quantity-input', variant: card_product.selected_or_first_available_variant, min: 0 %}
+              </quick-add-bulk>
+            {% else %}
+              <modal-opener data-modal="#QuickAddBulk-{{ card_product.id }}-{{ section_id }}">
+                <button class="button button--full-width button--secondary">
+                  {{ 'products.product.choose_options' | t }}
+                </button>
+              </modal-opener>
+              {%- comment -%} El modal de Bulk es gigante, lo mantenemos igual pero con nuevas clases de envoltura {%- endcomment -%}
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
