@@ -18,7 +18,6 @@
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
-  background: #f3f3f3;
 }
 
 .custom-card-media {
