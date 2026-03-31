@@ -80,6 +80,7 @@
   width: auto;
   padding:8px;
   background:#292929;
+  border-radius:50px;
 }
 
 .facet-filters__field .select:after,
