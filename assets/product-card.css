@@ -7,7 +7,7 @@
   background: #fff;
   position: relative;
   overflow: hidden;
-  border: 1px solid #eee; /* Ajusta según Figma */
+  border-radius:20px;
 }
 
 /* Forzar imagen 1:1 */
