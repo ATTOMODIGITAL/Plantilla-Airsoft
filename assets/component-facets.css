@@ -169,7 +169,7 @@
 }
 
 .facets__wrapper {
-  align-items: center;
+  align-items: flex-end;
   align-self: flex-start;
   grid-column: 1;
   grid-row: 1;
