@@ -2389,7 +2389,7 @@ input[type='checkbox'] {
 
   .header--middle-default {
     grid-template-areas: 'heading navigation icons';
-     grid-template-columns: inherit;
+     grid-template-columns: auto auto 1fr;
     column-gap: 2rem;
   }
 
