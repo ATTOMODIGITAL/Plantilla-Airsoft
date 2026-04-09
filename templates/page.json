@@ -47,12 +47,14 @@
         "image_height": "small",
         "image_behavior": "none",
         "desktop_content_position": "middle-left",
+        "max-width": 300,
         "desktop_content_alignment": "left",
         "show_text_box": true,
         "color_scheme": "",
         "stack_images_on_mobile": true,
         "mobile_content_alignment": "center",
-        "show_text_below": true
+        "show_text_below": true,
+        "max-width-mobile": 300
       }
     }
   },
