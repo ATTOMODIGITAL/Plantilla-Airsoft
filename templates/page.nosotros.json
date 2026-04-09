@@ -153,6 +153,7 @@
         "desktop_image_width": "medium",
         "layout": "image_first",
         "image_behavior": "none",
+        "border_radius": 30,
         "content_layout": "no-overlap",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
@@ -275,6 +276,16 @@
         "padding_bottom": 52
       }
     },
+    "newsletter_banner_hwJF4z": {
+      "type": "newsletter-banner",
+      "name": "Newsletter Banner",
+      "settings": {
+        "image": "shopify://shop_images/Frame_1000003990.webp",
+        "heading": "Únete al equipo",
+        "text": "<p>Suscríbete a nuestro newsletter y sé el primero en conocer nuevos productos, lanzamientos y promociones exclusivas.</p>",
+        "color_scheme": ""
+      }
+    }
   },
   "order": [
     "main",
@@ -282,6 +293,7 @@
     "scrolling_banner_VLiEHT",
     "image_with_text_XVBaYW",
     "timeline_history_q8bbM3",
-    "benefits_slider_A84UmR"
+    "benefits_slider_A84UmR",
+    "newsletter_banner_hwJF4z"
   ]
 }
