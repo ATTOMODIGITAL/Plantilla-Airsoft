@@ -2,6 +2,7 @@
 <style>
   .banner__box{
     max-width: {{ section.settings.max-width }}px;
+    background:{{ section.setting.rgba }}
   }
 
   @media (max-width:767px){
@@ -322,6 +323,12 @@
       "id": "max-width",
       "default": 300,
       "label": "Max width (px)"
+    },
+    {
+      "type": "text",
+      "id": "rgba",
+      "default": "0,0,0,0.6",
+      "label": "Color RGBA"
     },
     {
       "type": "select",
