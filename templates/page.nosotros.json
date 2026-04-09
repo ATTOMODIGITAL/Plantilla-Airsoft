@@ -162,12 +162,68 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    }
+    },
+    "timeline_history_q8bbM3": {
+      "type": "timeline-history",
+      "blocks": {
+        "step_7cTAQG": {
+          "type": "step",
+          "settings": {
+            "year": "1995",
+            "title": "Primeras partidas",
+            "text": "Todo empezó con unas partidas...",
+            "image": "shopify://shop_images/2021_03_19_sesja_Olkusz_51_1.jpg"
+          }
+        },
+        "step_XkR98t": {
+          "type": "step",
+          "settings": {
+            "year": "1995",
+            "title": "Primeras partidas",
+            "text": "Todo empezó con unas partidas...",
+            "image": "shopify://shop_images/Blog_secundario_2.png"
+          }
+        },
+        "step_hMBhnU": {
+          "type": "step",
+          "settings": {
+            "year": "1995",
+            "title": "Primeras partidas",
+            "text": "Todo empezó con unas partidas...",
+            "image": "shopify://shop_images/Blog_principal.png"
+          }
+        },
+        "step_8fQThd": {
+          "type": "step",
+          "settings": {
+            "year": "1995",
+            "title": "Primeras partidas",
+            "text": "Todo empezó con unas partidas...",
+            "image": "shopify://shop_images/Blog_secundario_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "step_7cTAQG",
+        "step_XkR98t",
+        "step_hMBhnU",
+        "step_8fQThd"
+      ],
+      "name": "Timeline History",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "title": "Conoce nuestra historia",
+        "vertical_padding": 30,
+        "horizontal_padding": 30,
+        "border_radius": 30
+      }
+    },
   },
   "order": [
     "main",
     "image_banner_wYEKRk",
     "scrolling_banner_VLiEHT",
-    "image_with_text_XVBaYW"
+    "image_with_text_XVBaYW",
+    "timeline_history_q8bbM3"
   ]
 }
