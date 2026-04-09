@@ -218,12 +218,70 @@
         "border_radius": 30
       }
     },
+    "benefits_slider_A84UmR": {
+      "type": "benefits-slider",
+      "blocks": {
+        "benefit_9NKm8z": {
+          "type": "benefit",
+          "settings": {
+            "background_color": "#7ed957",
+            "icon_color": "#000000",
+            "icon": "star-empty",
+            "title": "Asesoramiento",
+            "text": "Experto"
+          }
+        },
+        "benefit_gqnpPV": {
+          "type": "benefit",
+          "settings": {
+            "background_color": "#7ed957",
+            "icon_color": "#000000",
+            "icon": "settings",
+            "title": "Garantía y",
+            "text": "repuestos"
+          }
+        },
+        "benefit_Xag6Mw": {
+          "type": "benefit",
+          "settings": {
+            "background_color": "#7ed957",
+            "icon_color": "#000000",
+            "icon": "shipping",
+            "title": "Envío rápido",
+            "text": "24/48h"
+          }
+        },
+        "benefit_npPyx8": {
+          "type": "benefit",
+          "settings": {
+            "background_color": "#7ed957",
+            "icon_color": "#000000",
+            "icon": "secure",
+            "title": "Pago",
+            "text": "Seguro"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_9NKm8z",
+        "benefit_gqnpPV",
+        "benefit_Xag6Mw",
+        "benefit_npPyx8"
+      ],
+      "name": "Barra de beneficios",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
   },
   "order": [
     "main",
     "image_banner_wYEKRk",
     "scrolling_banner_VLiEHT",
     "image_with_text_XVBaYW",
-    "timeline_history_q8bbM3"
+    "timeline_history_q8bbM3",
+    "benefits_slider_A84UmR"
   ]
 }
