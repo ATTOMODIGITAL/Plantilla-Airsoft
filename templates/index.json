@@ -54,12 +54,16 @@
         "image_height": "large",
         "image_behavior": "zoom-in",
         "desktop_content_position": "middle-center",
+        "max-width": 300,
+        "border": 30,
+        "rgba": "0,0,0,0.6",
         "desktop_content_alignment": "center",
         "show_text_box": false,
         "color_scheme": "scheme-1",
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "center",
-        "show_text_below": false
+        "show_text_below": false,
+        "max-width-mobile": 300
       }
     },
     "collection_list_btq6Uc": {
@@ -193,40 +197,44 @@
         "benefit_9NKm8z": {
           "type": "benefit",
           "settings": {
-            "background_color": "#7ed957",
+            "background_color_card": "#ffffff",
+            "background_color_icon": "#7ed957",
             "icon_color": "#000000",
             "icon": "star-empty",
-            "title": "Asesoramiento",
+            "title": "<strong>Asesoramiento</strong>",
             "text": "Experto"
           }
         },
         "benefit_gqnpPV": {
           "type": "benefit",
           "settings": {
-            "background_color": "#7ed957",
+            "background_color_card": "#ffffff",
+            "background_color_icon": "#7ed957",
             "icon_color": "#000000",
             "icon": "settings",
-            "title": "Garantía y",
+            "title": "<strong>Garantía y</strong>",
             "text": "repuestos"
           }
         },
         "benefit_Xag6Mw": {
           "type": "benefit",
           "settings": {
-            "background_color": "#7ed957",
+            "background_color_card": "#ffffff",
+            "background_color_icon": "#7ed957",
             "icon_color": "#000000",
             "icon": "shipping",
-            "title": "Envío rápido",
+            "title": "<strong>Envío rápido</strong>",
             "text": "24/48h"
           }
         },
         "benefit_npPyx8": {
           "type": "benefit",
           "settings": {
-            "background_color": "#7ed957",
+            "background_color_card": "#ffffff",
+            "background_color_icon": "#7ed957",
             "icon_color": "#000000",
             "icon": "secure",
-            "title": "Pago",
+            "title": "<strong>Pago</strong>",
             "text": "Seguro"
           }
         }
@@ -309,12 +317,16 @@
         "image_height": "small",
         "image_behavior": "zoom-in",
         "desktop_content_position": "middle-center",
+        "max-width": 300,
+        "border": 30,
+        "rgba": "0,0,0,0.6",
         "desktop_content_alignment": "center",
         "show_text_box": false,
         "color_scheme": "scheme-1",
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "center",
-        "show_text_below": false
+        "show_text_below": false,
+        "max-width-mobile": 300
       }
     },
     "featured_blog_Az6fNE": {
@@ -429,6 +441,7 @@
         "desktop_image_width": "medium",
         "layout": "image_first",
         "image_behavior": "none",
+        "border_radius": 30,
         "content_layout": "no-overlap",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
