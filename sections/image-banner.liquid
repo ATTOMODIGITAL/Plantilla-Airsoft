@@ -1,5 +1,15 @@
 {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+<style>
+  .banner__box{
+    max-width: {{ section.settings.max-width }}px;
+  }
 
+  @media (max-width:767px){
+    .banner__box{
+      max-width: {{ section.settings.max-width }}px;
+    }
+  }
+</style>
 {%- if section.settings.image_height == 'adapt' and section.settings.image != blank -%}
   {%- style -%}
     @media screen and (max-width: 749px) {
@@ -19,9 +29,7 @@
         content: '';
         display: block;
       }
-      .banner__box{
-        max-width: {{ section.settings.max-width }}
-      }
+
     }
   {%- endstyle -%}
 {%- endif -%}
