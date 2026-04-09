@@ -2,11 +2,11 @@
 <style>
   .banner__box{
     max-width: {{ section.settings.max-width }}px;
-    background-color:rgba({{ section.setting.rgba }});
-    border-radius:30px;
+    background-color: rgba({{ section.settings.rgba }});
+    border-radius: {{ section.settings.border }}px;
   }
 
-  @media (max-width:767px){
+  @media (max-width: 767px){
     .banner__box{
       max-width: {{ section.settings.max-width-mobile }}px;
     }
