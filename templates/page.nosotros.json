@@ -236,9 +236,9 @@
         "benefit_gqnpPV": {
           "type": "benefit",
           "settings": {
-            "background_color_card": "#ffffff",
-            "background_color_icon": "#7ed957",
-            "icon_color": "#000000",
+            "background_color_card": "#000000",
+            "background_color_icon": "#000000",
+            "icon_color": "#ffffff",
             "icon": "settings",
             "title": "Garantía y",
             "text": "repuestos"
