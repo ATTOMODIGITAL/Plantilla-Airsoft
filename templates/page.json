@@ -48,6 +48,8 @@
         "image_behavior": "none",
         "desktop_content_position": "middle-left",
         "max-width": 300,
+        "border": 30,
+        "rgba": "0,0,0,0.7",
         "desktop_content_alignment": "left",
         "show_text_box": true,
         "color_scheme": "",
