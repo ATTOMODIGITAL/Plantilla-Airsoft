@@ -225,8 +225,8 @@
         "benefit_9NKm8z": {
           "type": "benefit",
           "settings": {
-            "background_color-card": "#000000",
-            "background_color": "#000000",
+            "background_color_card": "#000000",
+            "background_color_icon": "#000000",
             "icon_color": "#ffffff",
             "icon": "star-empty",
             "title": "Asesoramiento",
@@ -236,8 +236,8 @@
         "benefit_gqnpPV": {
           "type": "benefit",
           "settings": {
-            "background_color-card": "#ffffff",
-            "background_color": "#7ed957",
+            "background_color_card": "#ffffff",
+            "background_color_icon": "#7ed957",
             "icon_color": "#000000",
             "icon": "settings",
             "title": "Garantía y",
@@ -247,8 +247,8 @@
         "benefit_Xag6Mw": {
           "type": "benefit",
           "settings": {
-            "background_color-card": "#ffffff",
-            "background_color": "#7ed957",
+            "background_color_card": "#ffffff",
+            "background_color_icon": "#7ed957",
             "icon_color": "#000000",
             "icon": "shipping",
             "title": "Envío rápido",
@@ -258,8 +258,8 @@
         "benefit_npPyx8": {
           "type": "benefit",
           "settings": {
-            "background_color-card": "#ffffff",
-            "background_color": "#7ed957",
+            "background_color_card": "#ffffff",
+            "background_color_icon": "#7ed957",
             "icon_color": "#000000",
             "icon": "secure",
             "title": "Pago",
