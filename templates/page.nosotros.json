@@ -225,8 +225,8 @@
         "benefit_9NKm8z": {
           "type": "benefit",
           "settings": {
-            "background_color": "#7ed957",
-            "icon_color": "#000000",
+            "background_color": "#000000",
+            "icon_color": "#ffffff",
             "icon": "star-empty",
             "title": "Asesoramiento",
             "text": "Experto"
