@@ -58,10 +58,76 @@
         "show_text_below": true,
         "max-width-mobile": 300
       }
+    },
+    "scrolling_banner_VLiEHT": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "image_7ceXJX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image_10.png",
+            "t:sections.image-banner.blocks.text.name": "",
+            "height_desktop": 60,
+            "height_mobile": 60,
+            "link": ""
+          }
+        },
+        "image_7FR4ai": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image_9.png",
+            "t:sections.image-banner.blocks.text.name": "",
+            "height_desktop": 60,
+            "height_mobile": 60,
+            "link": ""
+          }
+        },
+        "image_KCLeci": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Airsoft.png",
+            "t:sections.image-banner.blocks.text.name": "",
+            "height_desktop": 60,
+            "height_mobile": 60,
+            "link": ""
+          }
+        },
+        "image_WiEqqp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_9.png",
+            "t:sections.image-banner.blocks.text.name": "",
+            "height_desktop": 60,
+            "height_mobile": 60,
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_7ceXJX",
+        "image_7FR4ai",
+        "image_KCLeci",
+        "image_WiEqqp"
+      ],
+      "name": "t:sections.scrolling-banner.name",
+      "settings": {
+        "background_color": "#292929",
+        "show_fade": false,
+        "borders": false,
+        "animation_direction": "normal",
+        "animation_speed": 60,
+        "section_padding_top": 20,
+        "section_padding_bottom": 20,
+        "space_between_blocks_desktop": 80,
+        "space_between_blocks_mobile": 20,
+        "rotate": "0",
+        "color_scheme": "white"
+      }
     }
   },
   "order": [
     "main",
-    "image_banner_wYEKRk"
+    "image_banner_wYEKRk",
+    "scrolling_banner_VLiEHT"
   ]
 }
